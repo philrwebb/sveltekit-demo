@@ -6,7 +6,7 @@
     <a href="canvasexample">Canvas Globe</a>
     <a href="trefoil">Canvas Trefoil Knot</a>
     <a href="counter">Writable Store</a>
-    <a href="fibonacci">Fibonacci Example</a>
+    <a href="fibonacci">Fibonacci Example (<a href="fibonaccidoc">doc</a>)</a>
     <a href="treedemo">Tree Demo</a>
 </nav>
 
