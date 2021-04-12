@@ -12,7 +12,7 @@
 
 <div class="treecontainer">
     <h1>Tree Demonstration</h1>
-    <Tree tree={tree_value} />
+    <Tree />
 </div>
 
 <style>

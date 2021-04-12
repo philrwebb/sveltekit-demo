@@ -1,29 +1,45 @@
 <script context="module">
     // retain module scoped expansion state for each tree node
     const _expansionState = {
-        /* treeNodeId: expanded <boolean> */
+        "USA": true,
+        "Florida": true,
+        "California": true,
     };
+    let _tree = null;
 </script>
 
 <script>
     import { treevalue } from "$lib/stores";
 
-    import { update_keyed_each } from "svelte/internal";
     //	import { slide } from 'svelte/transition'
-    export let tree;
+    export let tree = null;
 
-    const { label, children } = tree;
+    let label, children;
+
+    if (tree === null) {
+        treevalue.subscribe((value) => {
+            _tree = value;
+            console.log(_tree);
+            label = _tree.label;
+            children = _tree.children;
+        });
+    } else {
+        label = tree.label;
+        children = tree.children;
+    }
+
+    // const { label, children } = tree;
 
     let expanded = _expansionState[label] || false;
     const toggleExpansion = () => {
         expanded = _expansionState[label] = !expanded;
     };
     const addOne = () => {
-        const newChild = { label: "New York" };
-        const { label, children } = $treevalue;
-        let newchildren = [newChild, ...children];
-        treevalue.update((n) => n = {label, children: [...newchildren]});
-        console.log($treevalue);
+        const newChild = { label: "New York", children: [{label: "Brooklyn Bridge"}]};
+        const { label, children } = _tree;
+        let newchildren = [...children, newChild];
+        treevalue.update((n) => (n = { label, children: newchildren }));
+        console.log(_tree);
     };
     $: arrowDown = expanded;
 </script>
