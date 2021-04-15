@@ -1,15 +1,14 @@
 <script context="module">
     // retain module scoped expansion state for each tree node
     const _expansionState = {
-        "USA": true,
-        "Florida": true,
-        "California": true,
     };
     let _tree = null;
 </script>
 
 <script>
-    import { treevalue } from "$lib/stores";
+import { N } from "$lib/m";
+
+    import { treevalue, selectedNode } from "$lib/stores";
 
     //	import { slide } from 'svelte/transition'
     export let tree = null;
@@ -19,27 +18,33 @@
     if (tree === null) {
         treevalue.subscribe((value) => {
             _tree = value;
-            console.log(_tree);
             label = _tree.label;
             children = _tree.children;
+            tree = _tree;
         });
     } else {
         label = tree.label;
         children = tree.children;
     }
 
-    // const { label, children } = tree;
-
     let expanded = _expansionState[label] || false;
     const toggleExpansion = () => {
         expanded = _expansionState[label] = !expanded;
+        console.log($selectedNode, tree.label, tree.children, tree);
+        // selectedNode.update((n) => n = {label: t.label, children: t.children});
     };
-    const addOne = () => {
-        const newChild = { label: "New York", children: [{label: "Brooklyn Bridge"}]};
-        const { label, children } = _tree;
-        let newchildren = [...children, newChild];
-        treevalue.update((n) => (n = { label, children: newchildren }));
-        console.log(_tree);
+    const clicked = (t) => {
+        console.log(t);
+        selectedNode.update((n) => n = {label: t.label, children: t.children});
+        console.log($selectedNode, t.label, t.children);        
+        // const newChild = {
+        //     label: "New York",
+        //     children: [{ label: "Brooklyn Bridge" }],
+        // };
+        // const { label, children } = _tree;
+        // let newchildren = [...children, newChild];
+        // treevalue.update((n) => (n = { label, children: newchildren }));
+        // console.log(_tree);
     };
     $: arrowDown = expanded;
 </script>
@@ -48,7 +53,7 @@
     <!-- transition:slide -->
     <li>
         {#if children}
-            <span on:click={toggleExpansion}>
+            <span on:click={toggleExpansion()}>
                 <span class="arrow" class:arrowDown>&#x25b6</span>
                 {label}
             </span>
@@ -58,7 +63,7 @@
                 {/each}
             {/if}
         {:else}
-            <span on:click={addOne}>
+            <span on:click={clicked({ label })}>
                 <span class="no-arrow" />
                 {label}
             </span>

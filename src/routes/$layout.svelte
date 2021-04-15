@@ -8,6 +8,7 @@
     <a href="counter">Writable Store</a>
     <a href="fibonacci">Fibonacci Example (<a href="fibonaccidoc">doc</a>)</a>
     <a href="treedemo">Tree Demo</a>
+    <a href="audioplayer">Audio Player</a>
 </nav>
 
 <div class="content">
@@ -35,6 +36,7 @@
         height: 97vh;
         margin-left: 10%;
         margin-right: 10%;
+        padding-top: 5%;
         /* width: 100% */
     }
 </style>

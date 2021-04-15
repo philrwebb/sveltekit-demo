@@ -32,3 +32,10 @@ export const treevalue = writable(
         ],
     }
 );
+
+export const selectedNode = writable(
+    {
+        label: "non selected",
+        children: []
+    },
+)
