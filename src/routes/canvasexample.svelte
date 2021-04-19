@@ -46,7 +46,7 @@
 
 <style scoped>
     .globecontainer {
-        padding: 50px;
+        /* padding: 10px; */
         display: flex;
         justify-content: center;
         align-content: center;

@@ -73,7 +73,7 @@ function init() {
 init();
 function animate() {
   // ctx.drawImage(myImage, 0, 0, canvas.width, canvas.height);
-  ctx.globalAlpha = 0.1;
+  ctx.globalAlpha = 0.05;
   ctx.fillStyle = "rgb(0,0,0)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < particlesArray.length; i++) {
@@ -91,7 +91,7 @@ animate();
 #canvas1 {
   border: 2px solid white;
   position: absolute;
-  top: 10%;
+  /* top: 10%;   */
   left: 50%;
   transform: translate(-50%, -0%);
   width: 700px;

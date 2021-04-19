@@ -1,14 +1,14 @@
 <nav>
     <a href="/">Home</a>
-    <a href="example-markdown">Documentation</a>
-    <a href="pattern">Pattern</a>
-    <a href="particlerain">Particle Rain</a>
-    <a href="canvasexample">Canvas Globe</a>
-    <a href="trefoil">Canvas Trefoil Knot</a>
-    <a href="counter">Writable Store</a>
-    <a href="fibonacci">Fibonacci Example (<a href="fibonaccidoc">doc</a>)</a>
-    <a href="treedemo">Tree Demo</a>
-    <a href="audioplayer">Audio Player</a>
+    <a sveltekit:prefetch href="example-markdown">Documentation</a>
+    <a sveltekit:prefetch href="pattern">Pattern</a>
+    <a sveltekit:prefetch href="particlerain">Particle Rain</a>
+    <a sveltekit:prefetch href="canvasexample">Canvas Globe</a>
+    <a sveltekit:prefetch href="trefoil">Canvas Trefoil Knot</a>
+    <a sveltekit:prefetch href="counter">Writable Store</a>
+    <a sveltekit:prefetch href="fibonacci">Fibonacci Example (<a href="fibonaccidoc">doc</a>)</a>
+    <a sveltekit:prefetch href="treedemo">Tree Demo</a>
+    <a sveltekit:prefetch href="audioplayer">Audio Player</a>
 </nav>
 
 <div class="content">
@@ -36,7 +36,7 @@
         height: 97vh;
         margin-left: 10%;
         margin-right: 10%;
-        padding-top: 5%;
+        padding-top: 4%;
         /* width: 100% */
     }
 </style>

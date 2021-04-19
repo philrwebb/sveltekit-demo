@@ -66,7 +66,7 @@
         border-bottom: 10px; */
     }
     textarea {
-        height: 600px;
+        height: 500px;
         border-bottom: 100px;
         padding-bottom: 100px;
     }

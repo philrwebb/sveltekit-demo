@@ -2,6 +2,8 @@
 	import AudioPlayer from '$lib/audioplayer/audioplayer.svelte';
 </script>
 
+
+<div class="audiocontainer">
 <!-- https://musopen.org/music/9862-the-blue-danube-op-314/ -->
 <AudioPlayer
 	src="https://sveltejs.github.io/assets/music/strauss.mp3"
@@ -41,7 +43,13 @@
 	composer="Wolfgang Amadeus Mozart"
 	performer="Markus Staab"
 />
+</div>
 
 <style>
-    
+    .audiocontainer {
+		display: flex;
+		flex-direction: column;
+		margin-left: 25%;
+
+	}
 </style>

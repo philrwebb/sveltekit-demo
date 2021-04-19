@@ -37,7 +37,7 @@
             drawFlower();
             if (number > 1000) {
                 number = 1;
-                // adj = Math.random() * 1.25;
+                adj = Math.random() * 1.25;
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
             }
             requestAnimationFrame(animate);
@@ -50,7 +50,7 @@
     #canvas1 {
         border: 3px solid black;
         position: relative;
-        top: 10%;
+        /* top: 10%; */
         left: 50%;
         transform: translate(-50%, -0%);
         width: 700px;

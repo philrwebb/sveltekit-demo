@@ -25,7 +25,7 @@
 <style scoped>
     .treecontainer {
         margin-left: 10%;
-        margin-top: 10%;
+        /* margin-top: 10%; */
     }
     .treepanel {
         padding: 10px;
