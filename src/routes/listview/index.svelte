@@ -1,16 +1,12 @@
 <script>
     import List from "$lib/listview/list.svelte";
-    let rowdata = [
-        ["oranges", "lemons ", "pears  ", "apples ", "melons"],
-        ["black  ", "white  ", "yellow ", "orange ", "pink"],
-        ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
-    ];
+    import { rowsdata } from "$lib/stores.js";;
+    let rowdata = $rowsdata;
+    $: rowdata.sort((a,b) => a[0] < b[0] ? 0 : 1)
 </script>
-
 <div>
     <List {rowdata} />
 </div>
-
 <style scoped>
     div {
         width: 100%;

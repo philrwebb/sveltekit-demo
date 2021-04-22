@@ -39,3 +39,32 @@ export const selectedNode = writable(
         children: []
     },
 )
+
+export const rowsdata = writable(
+    [
+        ["oranges", "lemons ", "pears  ", "apples ", "melons"],
+        ["black  ", "white  ", "yellow ", "orange ", "pink"],
+        ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
+        ["black  ", "white  ", "yellow ", "orange ", "pink"],
+        ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
+        ["oranges", "lemons ", "pears  ", "apples ", "melons"],
+        ["oranges", "lemons ", "pears  ", "apples ", "melons"],
+        ["black  ", "white  ", "yellow ", "orange ", "pink"],
+        ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
+        ["black  ", "white  ", "yellow ", "orange ", "pink"],
+        ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
+        ["oranges", "lemons ", "pears  ", "apples ", "melons"],
+        ["oranges", "lemons ", "pears  ", "apples ", "melons"],
+        ["black  ", "white  ", "yellow ", "orange ", "pink"],
+        ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
+        ["black  ", "white  ", "yellow ", "orange ", "pink"],
+        ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
+        ["oranges", "lemons ", "pears  ", "apples ", "melons"],
+        ["oranges", "lemons ", "pears  ", "apples ", "melons"],
+        ["black  ", "white  ", "yellow ", "orange ", "pink"],
+        ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
+        ["black  ", "white  ", "yellow ", "orange ", "pink"],
+        ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
+        ["oranges", "lemons ", "pears  ", "apples ", "melons"],
+    ]
+)
