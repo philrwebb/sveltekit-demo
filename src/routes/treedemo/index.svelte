@@ -1,8 +1,8 @@
 <script>
     // from https://svelte.dev/repl/82b00644720a4ca2bdb89c6a653ec987
     import { treevalue } from "$lib/stores.js";
-    import Tree from "$lib/treedemo/Tree.svelte";
-    import Panel from "$lib/treedemo/Panel.svelte";
+    import Tree from "$lib/treedemo/tree.svelte";
+    import Panel from "$lib/treedemo/panel.svelte";
     let tree_value;
 
     const unsubscribe = treevalue.subscribe((value) => {
