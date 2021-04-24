@@ -1,7 +1,7 @@
 <script>
     import Row from "./row.svelte";
-    export let rowdata = [];
-    $: rowdata.sort((a,b) => a[0] < b[0] ? 0 : 1)
+    export let rowdata;
+    $: rowdata = rowdata.sort((a,b) => a[0] < b[0] ? 0 : 1)
     const gap = "5px";
 </script>
 
@@ -13,7 +13,7 @@
     {/each}
 </span>
 
-<style scoped>
+<style>
     .listcontainer {
         display: grid;
     }
