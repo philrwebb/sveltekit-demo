@@ -1,13 +1,17 @@
 <script>
     import List from "$lib/listview/list.svelte";
-    import { rowsdata } from "$lib/stores.js";;
-    let rowdata = $rowsdata;
-    $: rowdata.sort((a,b) => a[0] < b[0] ? 0 : 1)
+    import { rowsdata } from "$lib/stores.js";
+    let rowdata = [...$rowsdata];
 </script>
+
 <div>
+    <p>
+        <a href="listviewdoc">documentation</a>
+    </p>
     <List {rowdata} />
 </div>
-<style scoped>
+
+<style>
     div {
         width: 100%;
     }
