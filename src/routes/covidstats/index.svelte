@@ -1,14 +1,6 @@
 <script>
         import { covidSummary } from "$lib/stores.js";
         const { Global, Countries } = $covidSummary;
-        // let filtertext = "Australia";
-        console.log(Global);
-        let LocalCountries = [...Countries];
-        let LocalGlobal = Global;
-        // console.log(Countries.filter((c) => c.Country.startsWith("In")))
-        // let LocalCountries = Countries.filter((c) =>
-        //                 c.Country.startsWith(filtertext)
-        //         );
 </script>
 
 <!-- <p>{filtertext}</p>
@@ -27,14 +19,14 @@
         <ul class="worldcontainer">
                 <li>World</li>
                 <li>-</li>
-                <li class="statistic">{LocalGlobal.NewConfirmed}</li>
-                <li class="statistic">{LocalGlobal.TotalConfirmed}</li>
-                <li class="statistic">{LocalGlobal.NewDeaths}</li>
-                <li class="statistic">{LocalGlobal.TotalDeaths}</li>
-                <li class="statistic">{LocalGlobal.NewRecovered}</li>
-                <li class="statistic">{LocalGlobal.TotalRecovered}</li>
+                <li class="statistic">{Global.NewConfirmed}</li>
+                <li class="statistic">{Global.TotalConfirmed}</li>
+                <li class="statistic">{Global.NewDeaths}</li>
+                <li class="statistic">{Global.TotalDeaths}</li>
+                <li class="statistic">{Global.NewRecovered}</li>
+                <li class="statistic">{Global.TotalRecovered}</li>
         </ul>
-        {#each LocalCountries as country}
+        {#each Countries as country}
                 <li>
                         <ul class="countrycontainer">
                                 <li>{country.Country}</li>

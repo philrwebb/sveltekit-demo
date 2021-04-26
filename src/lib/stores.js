@@ -74,7 +74,7 @@ export const rowsdata = writable(
 export const covidSummary = http({});
 
 // any component can subscribe to changes
-// covidSummary.subscribe($covidSummary => console.log('Cart was updated: ', $covidSummary))
+covidSummary.subscribe($covidSummary => console.log('Cart was updated: ', $covidSummary))
 
 // issue HTTP GET to refresh summary
 covidSummary.get('https://api.covid19api.com/summary')

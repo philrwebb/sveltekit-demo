@@ -9,8 +9,8 @@
     <a sveltekit:prefetch href="fibonacci">Fibonacci Example</a>
     <a sveltekit:prefetch href="treedemo">Tree Demo</a>
     <a sveltekit:prefetch href="audioplayer">Audio Player</a>
-    <a href="listview">List Component</a>
-    <a href="covidstats">Covid 19 Statistics</a>
+    <a sveltekit:prefetch href="listview">List Component</a>
+    <a sveltekit:prefetch href="covidstats">Covid 19 Statistics</a>
 </nav>
 
 <div class="content">
