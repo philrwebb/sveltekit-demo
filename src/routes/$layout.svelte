@@ -6,10 +6,11 @@
     <a sveltekit:prefetch href="canvasexample">Canvas Globe</a>
     <a sveltekit:prefetch href="trefoil">Canvas Trefoil Knot</a>
     <a sveltekit:prefetch href="counter">Writable Store</a>
-    <a sveltekit:prefetch href="fibonacci">Fibonacci Example (<a href="fibonaccidoc">doc</a>)</a>
+    <a sveltekit:prefetch href="fibonacci">Fibonacci Example</a>
     <a sveltekit:prefetch href="treedemo">Tree Demo</a>
     <a sveltekit:prefetch href="audioplayer">Audio Player</a>
-    <a sveltekit:prefetch href="listview">List Component</a>
+    <a href="listview">List Component</a>
+    <a href="covidstats">Covid 19 Statistics</a>
 </nav>
 
 <div class="content">
@@ -23,11 +24,11 @@
     }
 
     nav {
-        display: flex;
-        justify-content: space-evenly;
-        align-content: space-around;
-        /* border: 1px solid black; */
-        /* background-color: lightblue; */
+        display: grid;
+        grid-template-columns: repeat(5, 2fr);
+        justify-items: space-evenly;
+        align-items: space-around;
+        margin: 20px;
         height: 3vh;
         width: 100%;
     }
