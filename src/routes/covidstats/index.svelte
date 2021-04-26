@@ -1,6 +1,8 @@
 <script>
         import { covidSummary } from "$lib/stores.js";
+        import numeral from "numeral";
         const { Global, Countries } = $covidSummary;
+        // console.log(Countries.filter(c => c.Country.startsWith("Aus")));
 </script>
 
 <!-- <p>{filtertext}</p>
@@ -19,12 +21,12 @@
         <ul class="worldcontainer">
                 <li>World</li>
                 <li>-</li>
-                <li class="statistic">{Global.NewConfirmed}</li>
-                <li class="statistic">{Global.TotalConfirmed}</li>
-                <li class="statistic">{Global.NewDeaths}</li>
-                <li class="statistic">{Global.TotalDeaths}</li>
-                <li class="statistic">{Global.NewRecovered}</li>
-                <li class="statistic">{Global.TotalRecovered}</li>
+                <li class="statistic">{numeral(Global.NewConfirmed).format('0,0')}</li>
+                <li class="statistic">{numeral(Global.TotalConfirmed).format('0,0')}</li>
+                <li class="statistic">{numeral(Global.NewDeaths).format('0,0')}</li>
+                <li class="statistic">{numeral(Global.TotalDeaths).format('0,0')}</li>
+                <li class="statistic">{numeral(Global.NewRecovered).format('0,0')}</li>
+                <li class="statistic">{numeral(Global.TotalRecovered).format('0,0')}</li>
         </ul>
         {#each Countries as country}
                 <li>
@@ -32,18 +34,18 @@
                                 <li>{country.Country}</li>
                                 <li>{country.CountryCode}</li>
                                 <li class="statistic">
-                                        {country.NewConfirmed}
+                                        {numeral(country.NewConfirmed).format('0,0')}
                                 </li>
                                 <li class="statistic">
-                                        {country.TotalConfirmed}
+                                        {numeral(country.TotalConfirmed).format('0,0')}
                                 </li>
-                                <li class="statistic">{country.NewDeaths}</li>
-                                <li class="statistic">{country.TotalDeaths}</li>
+                                <li class="statistic">{numeral(country.NewDeaths).format('0,0')}</li>
+                                <li class="statistic">{numeral(country.TotalDeaths).format('0,0')}</li>
                                 <li class="statistic">
-                                        {country.NewRecovered}
+                                        {numeral(country.NewRecovered).format('0,0')}
                                 </li>
                                 <li class="statistic">
-                                        {country.TotalRecovered}
+                                        {numeral(country.TotalRecovered).format('0,0')}
                                 </li>
                         </ul>
                 </li>
