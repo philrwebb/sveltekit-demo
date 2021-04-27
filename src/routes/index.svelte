@@ -1,15 +1,4 @@
 <div class="container">
-    <!-- <div class="tree">
-        <ul>
-            <li><a href=./pattern>Pattern</a></li>
-            <li><a href=./particlerain>Particle Rain</a></li>
-            <li><a href=./canvasexample>Canvas Globe</a></li>
-            <li><a href=./trefoil>Canvas Trefoil Knot</a></li>
-            <li><a href=./counter>Writable Store</a></li>
-            <li><a href=./fibonacci>Fibonacci Example</a></li>
-            <li><a href=./treedemo>Tree Demonstration</a></li>
-        </ul>
-    </div> -->
     <div class="content">
         <p>
             <a href=./pattern>Pattern</a>: This uses the canvas element to provide an eternally changing pattern.
@@ -38,6 +27,9 @@
         <p>
             <a href=./listview>List View Demo</a> - A svelte listview component that takes an array of arrays and displays as table. 
         </p>
+        <p>
+            <a href=./covidstats>Live Covid Statistics</a> - A svelte component that fetches data from a covid json dataset and displays.
+        </p>
     </div>
 </div>
 
@@ -46,20 +38,6 @@
         display: grid;
         grid-template-columns: 1fr;
     }
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-content: space-between;
-    }
-    li {
-        padding: 2px;
-        margin: 2px;
-    }
-    .tree {
-        margin: 10px;
-        border: 2px solid black;
-    }
     .content {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -67,6 +45,7 @@
         border: 2px solid grey;
         justify-content: space-evenly;
         align-content: center;
+        background-color: lightgrey;
     }
     .content > p {
         margin: 10px;

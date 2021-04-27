@@ -1,14 +1,21 @@
 <script>
     import List from "$lib/listview/list.svelte";
     import { rowsdata } from "$lib/stores.js";
-    let rowdata = [...$rowsdata];
+    let rowdata = [];
+    rowsdata.subscribe((value) => {
+        rowdata = [...value];
+    });
 </script>
 
 <div>
     <p>
         <a href="listviewdoc">documentation</a>
     </p>
-    <List {rowdata} />
+    {#if rowdata.length > 0}
+        <List {rowdata} />
+    {:else}
+        <p>loading . . .</p>
+    {/if}
 </div>
 
 <style>

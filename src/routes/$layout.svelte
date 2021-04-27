@@ -25,20 +25,20 @@
 
     nav {
         display: grid;
-        grid-template-columns: repeat(5, 2fr);
+        grid-template-columns: repeat(4, 2fr);
         justify-items: space-evenly;
         align-items: space-around;
-        margin: 20px;
-        height: 3vh;
-        width: 100%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 1%;
+        /* width: 100%; */
+        background-color: lightblue;
+        padding: 10px;
     }
 
     .content {
-        /* background-color: lightgrey; */
-        height: 97vh;
         margin-left: 10%;
         margin-right: 10%;
-        padding-top: 4%;
-        /* width: 100% */
+        padding-top: 40px;
     }
 </style>

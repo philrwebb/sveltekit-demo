@@ -2,7 +2,7 @@
         import http from "$lib/httpStore.js";
         import numeral from "numeral";
         const covidSummary = http({});
-        covidSummary.subscribe(($covidSummary) =>
+        covidSummary.subscribe((value) =>
                 console.log("summary loaded")
         );
         covidSummary.get("https://api.covid19api.com/summary");

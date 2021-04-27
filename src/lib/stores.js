@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import http from './httpStore.js';
+// import http from './httpStore.js';
 
 export const count = writable(0);
 
@@ -70,12 +70,12 @@ export const rowsdata = writable(
     ]
 )
 
-// create store and set initial value
-export const covidSummary = http({});
+// // create store and set initial value
+// export const covidSummary = http({});
 
-// any component can subscribe to changes
-covidSummary.subscribe($covidSummary => console.log('Cart was updated: ', $covidSummary))
+// // any component can subscribe to changes
+// covidSummary.subscribe($covidSummary => console.log('Cart was updated: ', $covidSummary))
 
-// issue HTTP GET to refresh summary
-covidSummary.get('https://api.covid19api.com/summary')
-// prints: Cart was updated: ...
+// // issue HTTP GET to refresh summary
+// covidSummary.get('https://api.covid19api.com/summary')
+// // prints: Cart was updated: ...
