@@ -39,6 +39,6 @@
     .content {
         margin-left: 10%;
         margin-right: 10%;
-        padding-top: 40px;
+        padding: 10px;
     }
 </style>
