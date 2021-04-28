@@ -14,6 +14,7 @@
 <style scoped>
     .rowcontainer {
         display: grid;
+        justify-content: right;
     }
 
 </style>
