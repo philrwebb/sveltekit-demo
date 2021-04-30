@@ -99,38 +99,63 @@ The List component can be used like this:
         }
     </style>
 ```
-Unrelated to the problem at hand, I have used the svelte store to contain my '''rowsdata'''
+Unrelated to the problem at hand, I have populated my rowdata from a covid19 statistics repository
 ```
-    import { writable } from 'svelte/store';
-
-    export const rowsdata = writable(
-        [
-            ["oranges", "lemons ", "pears  ", "apples ", "melons"],
-            ["black  ", "white  ", "yellow ", "orange ", "pink"],
-            ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
-            ["black  ", "white  ", "yellow ", "orange ", "pink"],
-            ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
-            ["oranges", "lemons ", "pears  ", "apples ", "melons"],
-            ["oranges", "lemons ", "pears  ", "apples ", "melons"],
-            ["black  ", "white  ", "yellow ", "orange ", "pink"],
-            ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
-            ["black  ", "white  ", "yellow ", "orange ", "pink"],
-            ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
-            ["oranges", "lemons ", "pears  ", "apples ", "melons"],
-            ["oranges", "lemons ", "pears  ", "apples ", "melons"],
-            ["black  ", "white  ", "yellow ", "orange ", "pink"],
-            ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
-            ["black  ", "white  ", "yellow ", "orange ", "pink"],
-            ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
-            ["oranges", "lemons ", "pears  ", "apples ", "melons"],
-            ["oranges", "lemons ", "pears  ", "apples ", "melons"],
-            ["black  ", "white  ", "yellow ", "orange ", "pink"],
-            ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
-            ["black  ", "white  ", "yellow ", "orange ", "pink"],
-            ["hello  ", "goodbye", "ciao   ", "whatsup", "ooroo"],
-            ["oranges", "lemons ", "pears  ", "apples ", "melons"],
-        ]
-    )
+<script>
+        import http from "$lib/httpStore.js";
+        import List from "$lib/listview/list.svelte";
+        import numeral from "numeral";
+        let rowdata = [];
+        const covidSummary = http({});
+        covidSummary.subscribe((value) => {
+                console.log(value);
+                if (value.Global) {
+                        rowdata = [];
+                        /* Heading Row */
+                        rowdata.push([
+                                "Country",
+                                "Country Code",
+                                "New Confirmed",
+                                "Total Confirmed",
+                                "New Deaths",
+                                "Total Deaths",
+                                "New Recovered",
+                                "Total Recovered",
+                        ]);
+                        /* World Data */
+                        rowdata.push([
+                                "World",
+                                "-",
+                                numeral(value.Global.NewConfirmed).format('0,0'),
+                                numeral(value.Global.TotalConfirmed).format('0,0'),
+                                numeral(value.Global.NewDeaths).format('0,0'),
+                                numeral(value.Global.TotalDeaths).format('0,0'),
+                                numeral(value.Global.NewRecovered).format('0,0'),
+                                numeral(value.Global.TotalRecovered).format('0,0'),
+                        ]);
+                        /* Country Data */
+                        value.Countries.forEach((element) => {
+                                rowdata.push([
+                                        element.Country,
+                                        element.CountryCode,
+                                        numeral(element.NewConfirmed).format('0,0'),
+                                        numeral(element.TotalConfirmed).format('0,0'),
+                                        numeral(element.NewDeaths).format('0,0'),
+                                        numeral(element.TotalDeaths).format('0,0'),
+                                        numeral(element.NewRecovered).format('0,0'),
+                                        numeral(element.TotalRecovered).format('0,0'),
+                                ]);
+                        });
+                        console.log(rowdata);
+                }
+        });
+        covidSummary.get("https://api.covid19api.com/summary");
+</script>
+ 
+{#if $covidSummary.Countries && $covidSummary.Global}
+        <List {rowdata} />
+{:else}
+        <p>loading</p>
+{/if}
 ```
-
 

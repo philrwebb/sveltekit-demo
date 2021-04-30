@@ -28,7 +28,8 @@
             <a href=./listview>List View Demo</a> - A svelte listview component that takes an array of arrays and displays as table. 
         </p> -->
         <p>
-            <a href=./covidstats>Live Covid Statistics</a> - A svelte component that fetches data from a covid json dataset and displays.
+            <a href=./covidstats>Live Covid Statistics</a> - A svelte component that fetches data from a covid json dataset and displays.  Here is
+            some <a href=./listviewdoc>documentation</a> about the list component and its usage.
         </p>
     </div>
 </div>
