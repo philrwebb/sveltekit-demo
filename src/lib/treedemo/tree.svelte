@@ -2,30 +2,24 @@
     // retain module scoped expansion state for each tree node
     const _expansionState = {
     };
-    let _tree = null;
+    // let _tree = null;
 </script>
 
 <script>
-import { N } from "$lib/m";
 
     import { treevalue, selectedNode } from "$lib/stores";
 
     //	import { slide } from 'svelte/transition'
     export let tree = null;
 
-    let label, children;
+    // let label, children;
 
     if (tree === null) {
         treevalue.subscribe((value) => {
-            _tree = value;
-            label = _tree.label;
-            children = _tree.children;
-            tree = _tree;
+            tree = value;
         });
-    } else {
-        label = tree.label;
-        children = tree.children;
     }
+    const {label, children} = tree;
 
     let expanded = _expansionState[label] || false;
     const toggleExpansion = () => {
