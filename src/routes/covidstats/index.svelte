@@ -2,17 +2,18 @@
         import numeral from "numeral";
         import http from "$lib/httpStore.js";
         import List from "$lib/listview/list.svelte";
-
         $: showDetail = false;
         $: rowdata = [];
         $: detailrowdata = [];
         $: pickedRow = [];
+        $: sortColumn = 0;
         const covidSummary = http({});
         const covidDetail = http([]);
         /* Someone clicked on a country row*/
         function handleMessage(event) {
+                let pickedCountryCode = event.detail.rowvalue[1];
                 pickedRow = $covidSummary.Countries.filter(
-                        (c) => c.CountryCode === event.detail.rowvalue[1]
+                        (c) => c.CountryCode === pickedCountryCode
                 );
                 if (pickedRow.length == 1) {
                         console.log(pickedRow[0].Slug);
@@ -36,18 +37,29 @@
                         /* Heading Row */
                         detailrowdata.push([
                                 "Confirmed",
+                                "New Confirmed",
                                 "Deaths",
+                                "New Deaths",
                                 "Recovered",
                                 "Active",
                                 "Date",
                         ]);
+                        let lastDeaths = 0;
+                        let lastConfirmed = 0;
                         /* Detail Rows */
                         value.forEach((element) => {
                                 detailrowdata.push([
                                         numeral(element.Confirmed).format(
                                                 "0,0"
                                         ),
+                                        numeral(
+                                                element.Confirmed -
+                                                        lastConfirmed
+                                        ).format("0,0"),
                                         numeral(element.Deaths).format("0,0"),
+                                        numeral(
+                                                element.Deaths - lastDeaths
+                                        ).format("0,0"),
                                         numeral(element.Recovered).format(
                                                 "0,0"
                                         ),
@@ -56,8 +68,11 @@
                                                 .toISOString()
                                                 .slice(0, 10),
                                 ]);
+                                lastDeaths = element.Deaths;
+                                lastConfirmed = element.Confirmed;
                         });
-                        detailrowdata.sort((a, b) => (a[4] < b[4] ? 1 : -1));
+                        /* sort by descending date */
+                        detailrowdata.sort((a,b) => a[6] < a[6] ? 1 : -1);
                 }
         });
         /* populate the summary data */
@@ -134,7 +149,11 @@
                                         Country Data - click on any row for
                                         detailed data
                                 </h1>
-                                <List {rowdata} on:message={handleMessage} />
+                                <List
+                                        {rowdata}
+                                        on:rowSelected={handleMessage}
+                                        {sortColumn}
+                                />
                         </div>
                 {:else}
                         <!-- <div class="spacer" />  -->
@@ -153,7 +172,10 @@
                                                         Summary</button
                                                 >
                                         </div>
-                                        <List rowdata={detailrowdata} />
+                                        <List
+                                                rowdata={detailrowdata}
+                                                {sortColumn}
+                                        />
                                 </div>
                         {/if}
                 {/if}

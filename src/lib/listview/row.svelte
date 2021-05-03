@@ -2,7 +2,7 @@
     import { createEventDispatcher } from "svelte";
     const dispatch = createEventDispatcher();
     function sendMessage() {
-        dispatch("message", {
+        dispatch("rowSelected", {
             rowvalue: rowvalue,
         });
     }

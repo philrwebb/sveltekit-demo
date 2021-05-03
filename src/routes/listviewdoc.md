@@ -1,4 +1,4 @@
-# A generic listview 
+# A generic listview - used to present covid statistics
 
 The goal was to produce a component that when provided with input of an array of arrays, would render the data as a listview.  For example:
 ```

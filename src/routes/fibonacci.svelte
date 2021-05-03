@@ -73,7 +73,7 @@
 </style>
 
 <div class="fibcontainer">
-    <p>Fibonacci number: {fibnumber} (<a href="fibonaccidoc">Documentation</a>)</p>
+    <p>Fibonacci number: {fibnumber}</p>
     <input type="number" bind:value={fibnumber} />
     <textarea name="" id="" cols="200" rows="200">{fibstring1}</textarea>
     <!-- <textarea>{modstr1}</textarea>

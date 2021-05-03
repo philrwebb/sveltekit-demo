@@ -6,9 +6,10 @@
 
 <style scoped>
     span {
-        border: black 1px solid;
+        border: black 0.5px solid;
         padding-left: 2px;
         padding-top: 1px;
         padding-bottom: 1px;
+        text-align: right;
     }
 </style>
