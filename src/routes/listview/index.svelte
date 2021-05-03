@@ -5,6 +5,7 @@
     rowsdata.subscribe((value) => {
         rowdata = [...value];
     });
+
 </script>
 
 <div>
