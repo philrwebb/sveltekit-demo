@@ -2,7 +2,6 @@
     // retain module scoped expansion state for each tree node
     const _expansionState = {
     };
-    // let _tree = null;
 </script>
 
 <script>
@@ -28,9 +27,7 @@
         // selectedNode.update((n) => n = {label: t.label, children: t.children});
     };
     const clicked = (t) => {
-        console.log(t);
         selectedNode.update((n) => n = {label: t.label, children: t.children});
-        console.log($selectedNode, t.label, t.children);        
         // const newChild = {
         //     label: "New York",
         //     children: [{ label: "Brooklyn Bridge" }],
@@ -57,7 +54,7 @@
                 {/each}
             {/if}
         {:else}
-            <span on:click={clicked({ label })}>
+            <span>
                 <span class="no-arrow" />
                 {label}
             </span>

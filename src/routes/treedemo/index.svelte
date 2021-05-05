@@ -1,42 +1,44 @@
 <script>
-    // from https://svelte.dev/repl/82b00644720a4ca2bdb89c6a653ec987
-    import { treevalue } from "$lib/stores.js";
-    import Tree from "$lib/treedemo/tree.svelte";
-    import Panel from "$lib/treedemo/panel.svelte";
-    let tree_value;
+	import Folder from '$lib/treedemo/folder.svelte';
+    const pickedFile = (event) => {
+        console.log(event);
+    }
 
-    const unsubscribe = treevalue.subscribe((value) => {
-        tree_value = value;
-    });
+	let root = [
+		{
+			type: 'folder',
+			name: 'Important work stuff',
+			files: [
+				{ type: 'file', name: 'quarterly-results.xlsx' }
+			]
+		},
+		{
+			type: 'folder',
+			name: 'Animal GIFs',
+			files: [
+				{
+					type: 'folder',
+					name: 'Dogs',
+					files: [
+						{ type: 'file', name: 'treadmill.gif' },
+						{ type: 'file', name: 'rope-jumping.gif' }
+					]
+				},
+				{
+					type: 'folder',
+					name: 'Goats',
+					files: [
+						{ type: 'file', name: 'parkour.gif' },
+						{ type: 'file', name: 'rampage.gif' }
+					]
+				},
+				{ type: 'file', name: 'cat-roomba.gif' },
+				{ type: 'file', name: 'duck-shuffle.gif' },
+				{ type: 'file', name: 'monkey-on-a-pig.gif' }
+			]
+		},
+		{ type: 'file', name: 'TODO.md' }
+	];
 </script>
 
-<div class="treecontainer">
-    <h1>Tree Demonstration</h1>
-    <div class="treepanel">
-        <div >
-            <Tree />
-        </div>
-        <div class="panel">
-            <Panel />
-        </div>
-    </div>
-</div>
-
-<style scoped>
-    .treecontainer {
-        margin-left: 10%;
-        /* margin-top: 10%; */
-    }
-    .treepanel {
-        padding: 10px;
-        border: black, 5px, solid;
-        display: grid;
-        grid-template-columns: 300px auto;
-        height: 500px;
-        background-color: lightblue;
-    }
-    .panel {
-        border: black, 5px, solid;
-        /* background-color: blue; */
-    }
-</style>
+<Folder name="Home" files={root} expanded on:fileSelected={pickedFile}/>

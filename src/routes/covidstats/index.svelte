@@ -34,16 +34,7 @@
                 if (value.length && value.length > 0) {
                         showDetail = true;
                         detailrowdata = [];
-                        /* Heading Row */
-                        detailrowdata.push([
-                                "Confirmed",
-                                "New Confirmed",
-                                "Deaths",
-                                "New Deaths",
-                                "Recovered",
-                                "Active",
-                                "Date",
-                        ]);
+
                         let lastDeaths = 0;
                         let lastConfirmed = 0;
                         /* Detail Rows */
@@ -72,12 +63,21 @@
                                 lastConfirmed = element.Confirmed;
                         });
                         /* sort by descending date */
-                        detailrowdata.sort((a,b) => a[6] < a[6] ? 1 : -1);
+                        detailrowdata.sort((a, b) => (a[6] < a[6] ? 1 : -1));
+                        /* Heading Row */
+                        detailrowdata.splice(0, 0, [
+                                "Confirmed",
+                                "New Confirmed",
+                                "Deaths",
+                                "New Deaths",
+                                "Recovered",
+                                "Active",
+                                "Date",
+                        ]);
                 }
         });
         /* populate the summary data */
         covidSummary.subscribe((value) => {
-                console.log(value);
                 if (value.Global) {
                         rowdata = [];
                         /* Heading Row */
@@ -135,7 +135,6 @@
                                         ),
                                 ]);
                         });
-                        console.log(rowdata);
                 }
         });
         covidSummary.get("https://api.covid19api.com/summary");
@@ -152,7 +151,6 @@
                                 <List
                                         {rowdata}
                                         on:rowSelected={handleMessage}
-                                        {sortColumn}
                                 />
                         </div>
                 {:else}
@@ -174,7 +172,6 @@
                                         </div>
                                         <List
                                                 rowdata={detailrowdata}
-                                                {sortColumn}
                                         />
                                 </div>
                         {/if}
