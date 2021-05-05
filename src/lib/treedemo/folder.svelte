@@ -1,5 +1,5 @@
 <script>
-	import File from './File.svelte';
+	import File from './file.svelte';
 
 	export let expanded = false;
 	export let name;
