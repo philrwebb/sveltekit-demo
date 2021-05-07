@@ -33,9 +33,11 @@
             efficient algorithm to calculate very large Fib numbers. Here is
             some <a href="./fibonaccidoc">documentation</a> about this.
         </p>
-        <!-- <p>
-            <a href=./treedemo>Tree Demo</a> - A demonstration of a dynamic tree with expand/collapse.
-        </p> -->
+        <p>
+            <a href="./treedemo">Tree Demo</a> - A demonstration of a dynamic tree
+            with expand/collapse. Raises events back to container so that another
+            control on the panel can be set.
+        </p>
         <!-- <p>
             <a href=./listview>List View Demo</a> - A svelte listview component that takes an array of arrays and displays as table. 
         </p> -->
