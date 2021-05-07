@@ -1,25 +1,30 @@
 <script>
-	import File from './file.svelte';
+	import { createEventDispatcher } from "svelte";
+	import File from "./file.svelte";
 
 	export let expanded = false;
 	export let name;
 	export let files;
-
+	const dispatch = createEventDispatcher();
 	function toggle() {
 		expanded = !expanded;
+		dispatch("folderSelected", {
+			folderName: name,
+			files,
+		});
 	}
 </script>
 
-<span class:expanded on:click={toggle}>{name}</span>
+<span class:expanded on:click|self={toggle}>{name}</span>
 
 {#if expanded}
 	<ul>
 		{#each files as file}
 			<li>
-				{#if file.type === 'folder'}
-					<svelte:self {...file}/>
+				{#if file.type === "folder"}
+					<svelte:self {...file} on:fileSelected on:folderSelected />
 				{:else}
-					<File {...file} on:fileSelected/>
+					<File {...file} on:fileSelected />
 				{/if}
 			</li>
 		{/each}
@@ -29,7 +34,8 @@
 <style>
 	span {
 		padding: 0 0 0 1.5em;
-		background: url(https://svelte.dev/tutorial/icons/folder.svg) 0 0.1em no-repeat;
+		background: url(https://svelte.dev/tutorial/icons/folder.svg) 0 0.1em
+			no-repeat;
 		background-size: 1em 1em;
 		font-weight: bold;
 		cursor: pointer;
