@@ -1,11 +1,13 @@
 <script>
     import { createEventDispatcher } from "svelte";
     export let name;
+    export let component;
     $: type = name.slice(name.lastIndexOf(".") + 1);
     const dispatch = createEventDispatcher();
     function sendMessage() {
         dispatch("fileSelected", {
             fileName: name,
+            component,
         });
     }
 </script>

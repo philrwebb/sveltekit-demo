@@ -1,15 +1,26 @@
 <script>
-	import File from "$lib/treedemo/file.svelte";
 	import Folder from "$lib/treedemo/folder.svelte";
+	import Fib from "$lib/documentation/fibonaccidoc.md";
+	import ParticleRain from "../particlerain.svelte";
+	import Example from "../example-markdown.md";
+	import About from "../about.svelte";
+	import Pattern from "../pattern.svelte";
+	import Trefoil from "../trefoil.svelte";
+	import ListViewDoc from "../listviewdoc.md";
+	import Globe from "../canvasexample.svelte";
+	import Audio from "../audioplayer/index.svelte";
+	let component = Audio;
 	let fileSelected;
-	$: folderSelected = "";
-	$: files = [];
+	let folderSelected;
+	let files = [];
 	const pickedFile = (event) => {
 		fileSelected = event.detail.fileName;
+		component = event.detail.component;
 		files = [];
 	};
 	const pickedFolder = (event) => {
 		folderSelected = event.detail.folderName;
+		component = event.detail.component;
 		files = event.detail.files;
 		fileSelected = "";
 	};
@@ -17,35 +28,57 @@
 	let root = [
 		{
 			type: "folder",
-			name: "Important work stuff",
-			files: [{ type: "file", name: "quarterly-results.xlsx" }],
+			name: "Particle Rain",
+			component: ParticleRain,
+			files: [
+				{
+					type: "file",
+					name: "Fibonacci-Documentation",
+					component: Fib,
+				},
+			],
 		},
 		{
 			type: "folder",
-			name: "Animal GIFs",
+			name: "Canvas Graphics",
+			component: Pattern,
 			files: [
 				{
 					type: "folder",
-					name: "Dogs",
+					name: "Trefoil",
+					component: Trefoil,
 					files: [
-						{ type: "file", name: "treadmill.gif" },
-						{ type: "file", name: "rope-jumping.gif" },
+						{ type: "file", name: "List View and Covid Statistics Documentation", component: ListViewDoc },
+						{
+							type: "file",
+							name: "Fibonacci-Documentationn",
+							component: Fib,
+						},
 					],
 				},
 				{
 					type: "folder",
-					name: "Goats",
+					name: "Canvas Globe",
+					component: Globe,
 					files: [
-						{ type: "file", name: "parkour.gif" },
-						{ type: "file", name: "rampage.gif" },
+						{
+							type: "file",
+							name: "Audio Player",
+							component: Audio,
+						},
+						{
+							type: "file",
+							name: "rampage.gif",
+							component: Example,
+						},
 					],
 				},
-				{ type: "file", name: "cat-roomba.gif" },
-				{ type: "file", name: "duck-shuffle.gif" },
-				{ type: "file", name: "monkey-on-a-pig.gif" },
+				{ type: "file", name: "cat-roomba.gif", component: Fib },
+				{ type: "file", name: "duck-shuffle.gif", component: Fib },
+				{ type: "file", name: "monkey-on-a-pig.gif", component: Fib },
 			],
 		},
-		{ type: "file", name: "TODO.md" },
+		{ type: "file", name: "TODO.md", component: Fib },
 	];
 </script>
 
@@ -53,6 +86,7 @@
 	<div>
 		<Folder
 			name="Home"
+			component={component}
 			files={root}
 			expanded
 			on:fileSelected={pickedFile}
@@ -60,16 +94,7 @@
 		/>
 	</div>
 	<div>
-		{#if files.length > 0}
-			<p>You selected the folder {folderSelected} which contains</p>
-			<ul>
-				{#each files as file}
-					<li>{file.type} {file.name}</li>
-				{/each}
-			</ul>
-		{:else if fileSelected}
-			<p>You selected the file: {fileSelected}</p>
-		{/if}
+		<svelte:component this={component} />
 	</div>
 </div>
 

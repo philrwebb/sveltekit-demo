@@ -5,12 +5,14 @@
 	export let expanded = false;
 	export let name;
 	export let files;
+	export let component;
 	const dispatch = createEventDispatcher();
 	function toggle() {
 		expanded = !expanded;
 		dispatch("folderSelected", {
 			folderName: name,
 			files,
+			component,
 		});
 	}
 </script>
