@@ -1,6 +1,7 @@
 <script>
 	import Folder from "$lib/treedemo/folder.svelte";
 	import Fib from "$lib/documentation/fibonaccidoc.md";
+	import TreeDoc from "$lib/documentation/treedemo.md";
 	import ParticleRain from "../particlerain.svelte";
 	import Example from "../example-markdown.md";
 	import About from "../about.svelte";
@@ -10,19 +11,11 @@
 	import Globe from "../canvasexample.svelte";
 	import Audio from "../audioplayer/index.svelte";
 	let component = Audio;
-	let fileSelected;
-	let folderSelected;
-	let files = [];
 	const pickedFile = (event) => {
-		fileSelected = event.detail.fileName;
 		component = event.detail.component;
-		files = [];
 	};
 	const pickedFolder = (event) => {
-		folderSelected = event.detail.folderName;
 		component = event.detail.component;
-		files = event.detail.files;
-		fileSelected = "";
 	};
 
 	let root = [
@@ -51,8 +44,8 @@
 						{ type: "file", name: "List View and Covid Statistics Documentation", component: ListViewDoc },
 						{
 							type: "file",
-							name: "Fibonacci-Documentationn",
-							component: Fib,
+							name: "TreeDemo-Documentationn",
+							component: TreeDoc,
 						},
 					],
 				},
