@@ -49,7 +49,6 @@
     .audiocontainer {
 		display: flex;
 		flex-direction: column;
-		margin-left: 25%;
 
 	}
 </style>

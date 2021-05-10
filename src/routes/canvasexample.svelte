@@ -5,7 +5,7 @@
     import { geoOrthographic, geoPath, geoGraticule10 } from "d3-geo";
 
     let map,
-        width = 750;
+        width = 600;
     // $: width = 640;
 
     const projection = geoOrthographic(),
@@ -50,5 +50,6 @@
         display: flex;
         justify-content: center;
         align-content: center;
+        width: auto;
     }
 </style>
