@@ -11,12 +11,15 @@
 	import Globe from "../canvasexample.svelte";
 	import Audio from "../audioplayer/index.svelte";
 	let component = Audio;
-	const pickedFile = (event) => {
+	const pickedItem = (event) => {
 		component = event.detail.component;
-	};
-	const pickedFolder = (event) => {
-		component = event.detail.component;
-	};
+	}
+	// const pickedFile = (event) => {
+	// 	component = event.detail.component;
+	// };
+	// const pickedFolder = (event) => {
+	// 	component = event.detail.component;
+	// };
 
 	let root = [
 		{
@@ -82,8 +85,8 @@
 			component={component}
 			files={root}
 			expanded
-			on:fileSelected={pickedFile}
-			on:folderSelected={pickedFolder}
+			on:fileSelected={pickedItem}
+			on:folderSelected={pickedItem}
 		/>
 	</div>
 	<div>
@@ -95,5 +98,8 @@
 	.container {
 		display: grid;
 		grid-template-columns: 2fr 5fr;
+	}
+	.container >* {
+		padding: 10px;
 	}
 </style>
