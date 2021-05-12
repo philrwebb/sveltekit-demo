@@ -223,4 +223,147 @@ Changes include:
 * because we want to bubble the folderSelected and fileSelected event, we need to add on:fileSelected and on:folderSelected to the svelte:self element and on:fileSelected to the File element.
 * replaced the relative url for file location in the style section 
 ### Finally the driving component
+```
+<script>
+	import Folder from './Folder.svelte';
+	const pickedFile = (event) => {
+		console.log(event.detail.name);
+	};
+	const pickedFolder = (event) => {
+		console.log(event.detail.name, event.detail.files)
+	};
 
+	let root = [
+		{
+			type: 'folder',
+			name: 'Important work stuff',
+			files: [
+				{ type: 'file', name: 'quarterly-results.xlsx' }
+			]
+		},
+		{
+			type: 'folder',
+			name: 'Animal GIFs',
+			files: [
+				{
+					type: 'folder',
+					name: 'Dogs',
+					files: [
+						{ type: 'file', name: 'treadmill.gif' },
+						{ type: 'file', name: 'rope-jumping.gif' }
+					]
+				},
+				{
+					type: 'folder',
+					name: 'Goats',
+					files: [
+						{ type: 'file', name: 'parkour.gif' },
+						{ type: 'file', name: 'rampage.gif' }
+					]
+				},
+				{ type: 'file', name: 'cat-roomba.gif' },
+				{ type: 'file', name: 'duck-shuffle.gif' },
+				{ type: 'file', name: 'monkey-on-a-pig.gif' }
+			]
+		},
+		{ type: 'file', name: 'TODO.md' }
+	];
+</script>
+<Folder 
+	name="Home" 
+	files={root} 
+	expanded 
+	on:fileSelected={pickedFile} 
+	on:folderSelected={pickedFolder}/>
+```
+The containing component handles the two possible events (fileSelected from file and folderSelected). For the purposes of demonstration, this just console logs the event data (the event.detail will have the properties published in the File or Folder components.
+### Add the panel to the containing component
+```
+<script>
+	import Folder from './Folder.svelte';
+	let nameFrom = "";
+	const pickedFile = (event) => {
+		nameFrom = event.detail.name;
+	};
+	const pickedFolder = (event) => {
+		nameFrom = event.detail.name;
+	};
+
+	let root = [
+		{
+			type: 'folder',
+			name: 'Important work stuff',
+			files: [
+				{ type: 'file', name: 'quarterly-results.xlsx' }
+			]
+		},
+		{
+			type: 'folder',
+			name: 'Animal GIFs',
+			files: [
+				{
+					type: 'folder',
+					name: 'Dogs',
+					files: [
+						{ type: 'file', name: 'treadmill.gif' },
+						{ type: 'file', name: 'rope-jumping.gif' }
+					]
+				},
+				{
+					type: 'folder',
+					name: 'Goats',
+					files: [
+						{ type: 'file', name: 'parkour.gif' },
+						{ type: 'file', name: 'rampage.gif' }
+					]
+				},
+				{ type: 'file', name: 'cat-roomba.gif' },
+				{ type: 'file', name: 'duck-shuffle.gif' },
+				{ type: 'file', name: 'monkey-on-a-pig.gif' }
+			]
+		},
+		{ type: 'file', name: 'TODO.md' }
+	];
+</script>
+<Div>
+<Folder 
+	name="Home" 
+	files={root} 
+	expanded 
+	on:fileSelected={pickedFile} 
+	on:folderSelected={pickedFolder}/>
+</Div>
+<Div>
+	<p>You clicked {nameFrom}
+</Div>
+
+<style>
+	.container {
+		display: grid;
+		grid-template-columns: 2fr 5fr;
+	}
+	.container >* {
+		padding: 10px;
+	}
+</style>
+```
+The panel now appears to the right of the screen and as you click, the name of the File or Folder selected will appear in the panel.   We now have a panel that reacts to actions against the tree.
+### Dynamically select a component
+The aim is present a component in the right panel that reflects the node selected in the right panel.  We could have an ever increasing if or case statement that looked at the name (for example) and presented a component:
+```
+<script>
+	import Foo from $lib/foo.svelte;
+	import Bar from $lib/bar.svelte;
+</script>
+.
+.
+.
+{#if name==="foo"}
+	<Foo />
+{:else if name ==="bar"}
+	<Bar />
+```
+Luckily svelte has an inbuilt solution to this:
+```
+	<svelte:component name={componentName)/>
+```
