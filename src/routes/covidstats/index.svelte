@@ -123,9 +123,9 @@
                                 </h1>
                                 <List
                                         {rowdata}
-                                        headerdata = {summaryheaderrowdata}
+                                        headerdata={summaryheaderrowdata}
                                         on:rowSelected={handleMessage}
-                                        sortCol=0
+                                        sortCol="0"
                                 />
                         </div>
                 {:else}
@@ -148,7 +148,7 @@
                                         <List
                                                 rowdata={detailrowdata}
                                                 headerdata={detailheaderrowdata}
-                                                sortCol=6
+                                                sortCol="6"
                                         />
                                 </div>
                         {/if}

@@ -14,6 +14,7 @@
     <a sveltekit:prefetch href="audioplayer">Audio Player</a>
     <!-- <a sveltekit:prefetch href="listview">List Component</a> -->
     <a sveltekit:prefetch href="covidstats">Covid 19 Statistics</a>
+    <a sveltekit:prefetch href="tabdemo">Tabs Demo</a>
 </nav>
 
 <div class="content">
