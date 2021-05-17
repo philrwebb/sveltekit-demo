@@ -10,6 +10,8 @@
     import Fib from "../fibonacci.svelte";
     import Covid from "../covidstats/index.svelte";
     import Pattern from "../pattern.svelte";
+    import Tree from "../treedemo/index.svelte";
+    import Audio from "../audioplayer/index.svelte";
     $: selectedTab = "1";
 </script>
 
@@ -40,5 +42,11 @@
     </Tab>
     <Tab id="9" title="Canvas Pattern">
         <Pattern />
+    </Tab>
+    <Tab id="10" title="Tree Demo">
+        <Tree />
+    </Tab>
+    <Tab id="11" title="Audio Player">
+        <Audio />
     </Tab>
 </Tabs>
