@@ -4,7 +4,7 @@
     const dispatch = createEventDispatcher();
     export let cellvalue = "";
     export let rowType = "Row";
-    
+
     $: displayValue = !isNaN(cellvalue)
         ? numeral(cellvalue).format("0,0")
         : cellvalue;
@@ -21,12 +21,10 @@
 
 {#if !isNaN(cellvalue)}
     <span class="number" on:click|self={sendMessage}> {displayValue} </span>
-{:else}
-    {#if rowType === "Header"}
+{:else if rowType === "Header"}
     <span class="header" on:click|self={sendMessage}>{displayValue}</span>
-    {:else}
+{:else}
     <span on:click|self={sendMessage}>{displayValue}</span>
-    {/if}
 {/if}
 
 <style scoped>

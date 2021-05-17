@@ -11,10 +11,10 @@
         const covidSummary = http({});
         const covidDetail = http([]);
         function handleMessage(event) {
-                let pickedCountryCode = event.detail.rowvalue[1];
+                let pickedCountryCode = event.detail.rowvalue[0];
                 if (event.detail.rowno > 0) {
                         pickedRow = $covidSummary.Countries.filter(
-                                (c) => c.CountryCode === pickedCountryCode
+                                (c) => c.Country === pickedCountryCode
                         );
                         if (pickedRow.length == 1) {
                                 console.log(pickedRow[0].Slug);
@@ -76,7 +76,6 @@
                         /* Heading Row */
                         summaryheaderrowdata = [
                                 "Country",
-                                "Country Code",
                                 "New Confirmed",
                                 "Total Confirmed",
                                 "New Deaths",
@@ -87,7 +86,6 @@
                         /* World Data */
                         rowdata.push([
                                 "World",
-                                "-",
                                 value.Global.NewConfirmed,
                                 value.Global.TotalConfirmed,
                                 value.Global.NewDeaths,
@@ -99,7 +97,6 @@
                         value.Countries.forEach((element) => {
                                 rowdata.push([
                                         element.Country,
-                                        element.CountryCode,
                                         element.NewConfirmed,
                                         element.TotalConfirmed,
                                         element.NewDeaths,

@@ -22,7 +22,7 @@
             on:click={sendMessage}
         >
             {#each rowvalue as cellvalue, cellno}
-                <Cell {cellvalue} {rowno} {cellno} on:columnSelected {rowType} />
+                <Cell {cellvalue} {rowno} {cellno} {rowType} on:columnSelected />
             {/each}
         </div>
 </slot>
