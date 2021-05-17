@@ -44,7 +44,7 @@
 
 <div class="listcontainer" style="grid-gap: {gap}">
     {#if headerdata}
-        <Row rowvalue={headerdata} on:columnSelected={sortColumn} />
+        <Row rowvalue={headerdata} on:columnSelected={sortColumn} rowType="Header" />
     {/if}
     {#each rowdata as rowvalue, rowno}
         <Row {rowvalue} on:rowSelected {rowno} on:columnSelected={sortColumn} />

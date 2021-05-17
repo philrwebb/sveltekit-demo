@@ -16,17 +16,15 @@
 </script>
 
 <slot>
-    {#if rowType === "row"}
         <div
             class="rowcontainer"
             style="grid-template-columns: repeat({nocols},1fr);grid-gap: {gap};"
             on:click={sendMessage}
         >
             {#each rowvalue as cellvalue, cellno}
-                <Cell {cellvalue} {rowno} {cellno} on:columnSelected />
+                <Cell {cellvalue} {rowno} {cellno} on:columnSelected {rowType} />
             {/each}
         </div>
-    {/if}
 </slot>
 
 <style scoped>

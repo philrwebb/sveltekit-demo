@@ -9,6 +9,7 @@
     import Trefoil from "../trefoil.svelte";
     import Fib from "../fibonacci.svelte";
     import Covid from "../covidstats/index.svelte";
+    import Pattern from "../pattern.svelte";
     $: selectedTab = "1";
 </script>
 
@@ -36,5 +37,8 @@
     </Tab>
     <Tab id="8" title="Covid Statistics">
         <Covid />
+    </Tab>
+    <Tab id="9" title="Canvas Pattern">
+        <Pattern />
     </Tab>
 </Tabs>
