@@ -77,7 +77,9 @@
 		{ type: "file", name: "TODO.md", component: Fib },
 	];
 </script>
-
+<svelte:head>
+	<title>Tree Demo</title>
+</svelte:head>
 <div class="container">
 	<div>
 		<Folder
@@ -97,7 +99,7 @@
 <style>
 	.container {
 		display: grid;
-		grid-template-columns: 2fr 5fr;
+		grid-template-columns: 3fr 6fr;
 	}
 	.container >* {
 		padding: 10px;

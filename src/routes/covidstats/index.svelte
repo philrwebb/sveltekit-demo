@@ -5,21 +5,23 @@
         $: showDetail = false;
         $: rowdata = [];
         $: detailrowdata = [];
+        $: summaryheaderrowdata = [];
+        $: detailheaderrowdata = [];
         $: pickedRow = [];
-        $: sortColumn = 0;
         const covidSummary = http({});
         const covidDetail = http([]);
-        /* Someone clicked on a country row*/
         function handleMessage(event) {
                 let pickedCountryCode = event.detail.rowvalue[1];
-                pickedRow = $covidSummary.Countries.filter(
-                        (c) => c.CountryCode === pickedCountryCode
-                );
-                if (pickedRow.length == 1) {
-                        console.log(pickedRow[0].Slug);
-                        covidDetail.get(
-                                `https://api.covid19api.com/total/country/${pickedRow[0].Slug}`
+                if (event.detail.rowno > 0) {
+                        pickedRow = $covidSummary.Countries.filter(
+                                (c) => c.CountryCode === pickedCountryCode
                         );
+                        if (pickedRow.length == 1) {
+                                console.log(pickedRow[0].Slug);
+                                covidDetail.get(
+                                        `https://api.covid19api.com/total/country/${pickedRow[0].Slug}`
+                                );
+                        }
                 }
         }
         /* Toggles between summary screen and detail screen */
@@ -40,21 +42,12 @@
                         /* Detail Rows */
                         value.forEach((element) => {
                                 detailrowdata.push([
-                                        numeral(element.Confirmed).format(
-                                                "0,0"
-                                        ),
-                                        numeral(
-                                                element.Confirmed -
-                                                        lastConfirmed
-                                        ).format("0,0"),
-                                        numeral(element.Deaths).format("0,0"),
-                                        numeral(
-                                                element.Deaths - lastDeaths
-                                        ).format("0,0"),
-                                        numeral(element.Recovered).format(
-                                                "0,0"
-                                        ),
-                                        numeral(element.Active).format("0,0"),
+                                        element.Confirmed,
+                                        element.Confirmed - lastConfirmed,
+                                        element.Deaths,
+                                        element.Deaths - lastDeaths,
+                                        element.Recovered,
+                                        element.Active,
                                         new Date(element.Date)
                                                 .toISOString()
                                                 .slice(0, 10),
@@ -65,7 +58,7 @@
                         /* sort by descending date */
                         detailrowdata.sort((a, b) => (a[6] < a[6] ? 1 : -1));
                         /* Heading Row */
-                        detailrowdata.splice(0, 0, [
+                        detailheaderrowdata = [
                                 "Confirmed",
                                 "New Confirmed",
                                 "Deaths",
@@ -73,7 +66,7 @@
                                 "Recovered",
                                 "Active",
                                 "Date",
-                        ]);
+                        ];
                 }
         });
         /* populate the summary data */
@@ -81,7 +74,7 @@
                 if (value.Global) {
                         rowdata = [];
                         /* Heading Row */
-                        rowdata.push([
+                        summaryheaderrowdata = [
                                 "Country",
                                 "Country Code",
                                 "New Confirmed",
@@ -90,49 +83,29 @@
                                 "Total Deaths",
                                 "New Recovered",
                                 "Total Recovered",
-                        ]);
+                        ];
                         /* World Data */
                         rowdata.push([
                                 "World",
                                 "-",
-                                numeral(value.Global.NewConfirmed).format(
-                                        "0,0"
-                                ),
-                                numeral(value.Global.TotalConfirmed).format(
-                                        "0,0"
-                                ),
-                                numeral(value.Global.NewDeaths).format("0,0"),
-                                numeral(value.Global.TotalDeaths).format("0,0"),
-                                numeral(value.Global.NewRecovered).format(
-                                        "0,0"
-                                ),
-                                numeral(value.Global.TotalRecovered).format(
-                                        "0,0"
-                                ),
+                                value.Global.NewConfirmed,
+                                value.Global.TotalConfirmed,
+                                value.Global.NewDeaths,
+                                value.Global.TotalDeaths,
+                                value.Global.NewRecovered,
+                                value.Global.TotalRecovered,
                         ]);
                         /* Country Data */
                         value.Countries.forEach((element) => {
                                 rowdata.push([
                                         element.Country,
                                         element.CountryCode,
-                                        numeral(element.NewConfirmed).format(
-                                                "0,0"
-                                        ),
-                                        numeral(element.TotalConfirmed).format(
-                                                "0,0"
-                                        ),
-                                        numeral(element.NewDeaths).format(
-                                                "0,0"
-                                        ),
-                                        numeral(element.TotalDeaths).format(
-                                                "0,0"
-                                        ),
-                                        numeral(element.NewRecovered).format(
-                                                "0,0"
-                                        ),
-                                        numeral(element.TotalRecovered).format(
-                                                "0,0"
-                                        ),
+                                        element.NewConfirmed,
+                                        element.TotalConfirmed,
+                                        element.NewDeaths,
+                                        element.TotalDeaths,
+                                        element.NewRecovered,
+                                        element.TotalRecovered,
                                 ]);
                         });
                 }
@@ -150,7 +123,9 @@
                                 </h1>
                                 <List
                                         {rowdata}
+                                        headerdata = {summaryheaderrowdata}
                                         on:rowSelected={handleMessage}
+                                        sortCol=0
                                 />
                         </div>
                 {:else}
@@ -172,6 +147,8 @@
                                         </div>
                                         <List
                                                 rowdata={detailrowdata}
+                                                headerdata={detailheaderrowdata}
+                                                sortCol=6
                                         />
                                 </div>
                         {/if}

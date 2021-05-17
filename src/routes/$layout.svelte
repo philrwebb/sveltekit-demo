@@ -1,3 +1,6 @@
+<svelte:head>
+    <title>Home</title>
+</svelte:head>
 <nav>
     <a href="/">Home</a>
     <!-- <a sveltekit:prefetch href="example-markdown">Documentation</a> -->
