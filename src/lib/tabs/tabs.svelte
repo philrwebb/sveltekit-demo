@@ -32,7 +32,7 @@
     });
 </script>
 
-<div>
+<div class="container">
     {#each titles as { id, title }}
         <button
             class:selected={$selectedTabStore === id}
@@ -55,5 +55,13 @@
     }
     div {
         margin: 20px;
+    }
+    .container {
+        display: flex;
+        gap: 5px;
+
+    }
+    button {
+        flex: 1;
     }
 </style>
