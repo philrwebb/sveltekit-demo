@@ -12,8 +12,8 @@ module.exports = {
 	],
 	rehypePlugins: [
 		require("rehype-slug"),
-		[require("rehype-autolink-headings"), {
-			behavior: "wrap",
-		}],
+		// [require("rehype-autolink-headings"), {
+		// 	behavior: "wrap",
+		// }],
 	],
 };
