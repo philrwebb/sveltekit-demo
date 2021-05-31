@@ -18,6 +18,7 @@ const c = [
 	() => import("../../../src/routes/dynamic/index.svelte"),
 	() => import("../../../src/routes/pattern.svelte"),
 	() => import("../../../src/routes/tabdemo/index.svelte"),
+	() => import("../../../src/routes/trefoil.svelte"),
 	() => import("../../../src/routes/about.svelte")
 ];
 
@@ -75,8 +76,11 @@ export const routes = [
 	// src/routes/tabdemo/index.svelte
 	[/^\/tabdemo\/?$/, [c[0], c[18]], [c[1]]],
 
+	// src/routes/trefoil.svelte
+	[/^\/trefoil\/?$/, [c[0], c[19]], [c[1]]],
+
 	// src/routes/about.svelte
-	[/^\/about\/?$/, [c[0], c[19]], [c[1]]],
+	[/^\/about\/?$/, [c[0], c[20]], [c[1]]],
 
 	// src/routes/api/index.js
 	[/^\/api\/?$/],
