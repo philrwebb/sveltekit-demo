@@ -1,4 +1,4 @@
-import { interpolateRainbow } from "d3-scale-chromatic";
+import { interpolateRainbow } from "d3-scale-chromatic/src/index.js";
 
 const N = 360,
 			r = 84;

@@ -3,7 +3,6 @@ const c = [
 	() => import("../components/error.svelte"),
 	() => import("../../../src/routes/index.svelte"),
 	() => import("../../../src/routes/example-markdown.md"),
-	() => import("../../../src/routes/canvasexample.svelte"),
 	() => import("../../../src/routes/fibonaccidoc.md"),
 	() => import("../../../src/routes/particlerain.svelte"),
 	() => import("../../../src/routes/audioplayer/index.svelte"),
@@ -32,59 +31,56 @@ export const routes = [
 	// src/routes/example-markdown.md
 	[/^\/example-markdown\/?$/, [c[0], c[3]], [c[1]]],
 
-	// src/routes/canvasexample.svelte
-	[/^\/canvasexample\/?$/, [c[0], c[4]], [c[1]]],
-
 	// src/routes/fibonaccidoc.md
-	[/^\/fibonaccidoc\/?$/, [c[0], c[5]], [c[1]]],
+	[/^\/fibonaccidoc\/?$/, [c[0], c[4]], [c[1]]],
 
 	// src/routes/particlerain.svelte
-	[/^\/particlerain\/?$/, [c[0], c[6]], [c[1]]],
+	[/^\/particlerain\/?$/, [c[0], c[5]], [c[1]]],
 
 	// src/routes/audioplayer/index.svelte
-	[/^\/audioplayer\/?$/, [c[0], c[7]], [c[1]]],
+	[/^\/audioplayer\/?$/, [c[0], c[6]], [c[1]]],
 
 	// src/routes/listviewdoc.md
-	[/^\/listviewdoc\/?$/, [c[0], c[8]], [c[1]]],
+	[/^\/listviewdoc\/?$/, [c[0], c[7]], [c[1]]],
 
 	// src/routes/covidstats/index.svelte
-	[/^\/covidstats\/?$/, [c[0], c[9]], [c[1]]],
+	[/^\/covidstats\/?$/, [c[0], c[8]], [c[1]]],
 
 	// src/routes/fibonacci.svelte
-	[/^\/fibonacci\/?$/, [c[0], c[10]], [c[1]]],
+	[/^\/fibonacci\/?$/, [c[0], c[9]], [c[1]]],
 
 	// src/routes/listview/index.svelte
-	[/^\/listview\/?$/, [c[0], c[11]], [c[1]]],
+	[/^\/listview\/?$/, [c[0], c[10]], [c[1]]],
 
 	// src/routes/settings.svelte
-	[/^\/settings\/?$/, [c[0], c[12]], [c[1]]],
+	[/^\/settings\/?$/, [c[0], c[11]], [c[1]]],
 
 	// src/routes/treedemo/index.svelte
-	[/^\/treedemo\/?$/, [c[0], c[13]], [c[1]]],
+	[/^\/treedemo\/?$/, [c[0], c[12]], [c[1]]],
 
 	// src/routes/apidemo/index.svelte
-	[/^\/apidemo\/?$/, [c[0], c[14]], [c[1]]],
+	[/^\/apidemo\/?$/, [c[0], c[13]], [c[1]]],
 
 	// src/routes/apidemo/[lastName].svelte
-	[/^\/apidemo\/([^/]+?)\/?$/, [c[0], c[15]], [c[1]], (m) => ({ lastName: d(m[1])})],
+	[/^\/apidemo\/([^/]+?)\/?$/, [c[0], c[14]], [c[1]], (m) => ({ lastName: d(m[1])})],
 
 	// src/routes/counter/index.svelte
-	[/^\/counter\/?$/, [c[0], c[16]], [c[1]]],
+	[/^\/counter\/?$/, [c[0], c[15]], [c[1]]],
 
 	// src/routes/dynamic/index.svelte
-	[/^\/dynamic\/?$/, [c[0], c[17]], [c[1]]],
+	[/^\/dynamic\/?$/, [c[0], c[16]], [c[1]]],
 
 	// src/routes/pattern.svelte
-	[/^\/pattern\/?$/, [c[0], c[18]], [c[1]]],
+	[/^\/pattern\/?$/, [c[0], c[17]], [c[1]]],
 
 	// src/routes/tabdemo/index.svelte
-	[/^\/tabdemo\/?$/, [c[0], c[19]], [c[1]]],
+	[/^\/tabdemo\/?$/, [c[0], c[18]], [c[1]]],
 
 	// src/routes/trefoil.svelte
-	[/^\/trefoil\/?$/, [c[0], c[20]], [c[1]]],
+	[/^\/trefoil\/?$/, [c[0], c[19]], [c[1]]],
 
 	// src/routes/about.svelte
-	[/^\/about\/?$/, [c[0], c[21]], [c[1]]],
+	[/^\/about\/?$/, [c[0], c[20]], [c[1]]],
 
 	// src/routes/api/index.js
 	[/^\/api\/?$/],
