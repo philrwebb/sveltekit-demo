@@ -4,13 +4,15 @@
 	"scripts": {
 		"dev": "svelte-kit dev -- --host",
 		"build": "svelte-kit build",
-		"start": "svelte-kit start"
+		"start": "svelte-kit start",
+		"version": "svelte-kit -v"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "next",
 		"@sveltejs/adapter-node": "next",
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
+		"faker": "^5.5.3",
 		"mdsvex": "^0.8.9",
 		"rehype-autolink-headings": "^5.0.1",
 		"rehype-slug": "^4.0.1",

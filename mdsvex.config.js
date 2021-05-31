@@ -1,19 +1,18 @@
-module.exports = {
+const config = {
 	extensions: [".svx", ".md"],
 	smartypants: {
 		dashes: "oldschool",
 	},
 	remarkPlugins: [
-		[require("remark-github"), {
+		[import("remark-github"), {
 			// Use your own repository
 			repository: "https://github.com/svelte-add/mdsvex.git",
 		}],
-		require("remark-abbr"),
+		import("remark-abbr"),
 	],
 	rehypePlugins: [
-		require("rehype-slug"),
-		// [require("rehype-autolink-headings"), {
-		// 	behavior: "wrap",
-		// }],
+		import("rehype-slug"),
 	],
 };
+
+export default config;
