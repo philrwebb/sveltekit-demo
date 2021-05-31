@@ -31,9 +31,9 @@
     <Tab id="5" title="Particle Rain">
         <ParticleRain />
     </Tab>
-    <Tab id="6" title="Trefoil">
+    <!-- <Tab id="6" title="Trefoil">
         <Trefoil />
-    </Tab>
+    </Tab> -->
     <Tab id="7" title="Fibonacci">
         <Fib />
     </Tab>
