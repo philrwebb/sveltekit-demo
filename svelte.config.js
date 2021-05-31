@@ -2,6 +2,7 @@ import { mdsvex } from "mdsvex";
 import { mdsvexConfig } from "./mdsvex.config.js";
 /** @type {import('@sveltejs/kit').Config} */
 import node from '@sveltejs/adapter-netlify';
+import preprocess from 'svelte-preprocess';
 
 // import pkg from './package.json';
 
@@ -22,6 +23,7 @@ const config = {
     // options passed to svelte.preprocess (https://svelte.dev/docs#svelte_preprocess)
     preprocess: [
 		mdsvex(mdsvexConfig),
+        preprocess()
     ],
 };
 
