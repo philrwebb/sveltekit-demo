@@ -8,7 +8,7 @@
 	import Pattern from "../pattern.svelte";
 	import Trefoil from "../trefoil.svelte";
 	import ListViewDoc from "../listviewdoc.md";
-	import Globe from "../canvasexample.svelte";
+	import Globe from "../../../save/canvasexample.svelte";
 	import Audio from "../audioplayer/index.svelte";
 	let component = Audio;
 	const pickedItem = (event) => {

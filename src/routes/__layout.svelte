@@ -6,7 +6,7 @@
     <!-- <a sveltekit:prefetch href="example-markdown">Documentation</a> -->
     <a sveltekit:prefetch href="pattern">Pattern</a>
     <a sveltekit:prefetch href="particlerain">Particle Rain</a>
-    <a sveltekit:prefetch href="canvasexample">Canvas Globe</a>
+    <!-- <a sveltekit:prefetch href="canvasexample">Canvas Globe</a> -->
     <a sveltekit:prefetch href="trefoil">Canvas Trefoil Knot</a>
     <!-- <a sveltekit:prefetch href="counter">Writable Store</a> -->
     <a sveltekit:prefetch href="fibonacci">Fibonacci Example</a>
