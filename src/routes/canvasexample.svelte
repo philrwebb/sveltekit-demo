@@ -1,8 +1,8 @@
 <script>
     import { onMount } from "svelte";
     import { Canvas, Layer, t } from "svelte-canvas";
-    import tjclient from 'topojson-client';
-    const { feature } = tjclient;
+    import feature from 'topojson-client';
+    const { featurefn } = feature;
     import { geoOrthographic, geoPath, geoGraticule10 } from "d3-geo";
 
     let map,
@@ -15,7 +15,7 @@
     onMount(() =>
         fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json")
             .then((data) => data.json())
-            .then((data) => (map = feature(data, "land")))
+            .then((data) => (map = featurefn(data, "land")))
     );
 
     $: graticule = ({ context, width, height }) => {
