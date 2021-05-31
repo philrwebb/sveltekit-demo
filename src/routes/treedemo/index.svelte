@@ -6,7 +6,7 @@
 	import Example from "../example-markdown.md";
 	import About from "../about.svelte";
 	import Pattern from "../pattern.svelte";
-	import Trefoil from "../trefoil.svelte";
+	// import Trefoil from "../../../save/trefoil.svelte";
 	import ListViewDoc from "../listviewdoc.md";
 	// import Globe from "../../../save/canvasexample.svelte";
 	import Audio from "../audioplayer/index.svelte";
@@ -42,7 +42,7 @@
 				{
 					type: "folder",
 					name: "Trefoil",
-					component: Trefoil,
+					component: ParticleRain,
 					files: [
 						{ type: "file", name: "List View and Covid Statistics Documentation", component: ListViewDoc },
 						{
@@ -55,7 +55,7 @@
 				{
 					type: "folder",
 					name: "Canvas Globe",
-					component: Trefoil,
+					component: ParticleRain,
 					files: [
 						{
 							type: "file",

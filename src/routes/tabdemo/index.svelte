@@ -6,7 +6,7 @@
     import Treedoc from "$lib/documentation/treedemo.md";
     // import Globe from "../../../save/canvasexample.svelte";
     import ParticleRain from "../particlerain.svelte";
-    import Trefoil from "../trefoil.svelte";
+    // import Trefoil from "../../../save/trefoil.svelte";
     import Fib from "../fibonacci.svelte";
     import Covid from "../covidstats/index.svelte";
     import Pattern from "../pattern.svelte";

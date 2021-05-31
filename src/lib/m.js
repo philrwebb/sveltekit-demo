@@ -1,4 +1,5 @@
-import { interpolateRainbow } from "d3-scale-chromatic/src/index.js";
+import pkg from "d3-scale-chromatic/src/sequential-multi/rainbow.js";
+const { interpolateRainbow } = pkg;
 
 const N = 360,
 			r = 84;
