@@ -1,7 +1,8 @@
 <script>
     import { onMount } from "svelte";
     import { Canvas, Layer, t } from "svelte-canvas";
-    import { feature } from "topojson-client";
+    import tjclient from 'topojson-client';
+    const { feature } = tjclient;
     import { geoOrthographic, geoPath, geoGraticule10 } from "d3-geo";
 
     let map,
