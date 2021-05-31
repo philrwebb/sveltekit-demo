@@ -4,7 +4,7 @@
     import Fibdoc from "$lib/documentation/fibonaccidoc.md";
     import Lvdoc from "../listviewdoc.md";
     import Treedoc from "$lib/documentation/treedemo.md";
-    import Globe from "../../../save/canvasexample.svelte";
+    // import Globe from "../../../save/canvasexample.svelte";
     import ParticleRain from "../particlerain.svelte";
     import Trefoil from "../trefoil.svelte";
     import Fib from "../fibonacci.svelte";
@@ -25,9 +25,9 @@
     <Tab id="3" title="Tree Documentation">
         <Treedoc />
     </Tab>
-    <Tab id="4" title="Globe">
+    <!-- <Tab id="4" title="Globe">
         <Globe />
-    </Tab>
+    </Tab> -->
     <Tab id="5" title="Particle Rain">
         <ParticleRain />
     </Tab>
