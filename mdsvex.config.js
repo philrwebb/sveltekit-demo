@@ -1,18 +1,4 @@
-const config = {
-	extensions: [".svx", ".md"],
-	smartypants: {
-		dashes: "oldschool",
-	},
-	remarkPlugins: [
-		[import("remark-github"), {
-			// Use your own repository
-			repository: "https://github.com/svelte-add/mdsvex.git",
-		}],
-		import("remark-abbr"),
-	],
-	rehypePlugins: [
-		import("rehype-slug"),
-	],
-};
+import { createRequire } from "module";
+const require = createRequire(import.meta.url)
 
-export default config;
+export const mdsvexConfig = require("./mdsvex.config.cjs");

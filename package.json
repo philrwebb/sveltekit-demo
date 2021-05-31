@@ -13,7 +13,7 @@
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
 		"faker": "^5.5.3",
-		"mdsvex": "^0.8.9",
+		"mdsvex": "^0.9.0",
 		"rehype-autolink-headings": "^5.0.1",
 		"rehype-slug": "^4.0.1",
 		"remark-abbr": "^1.4.1",

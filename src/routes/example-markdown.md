@@ -86,4 +86,3 @@ And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 
 This mention --- @svelte-add --- will turn into a link to the `svelte-add` GitHub page because the `remark-github` plugin is setup.
-
