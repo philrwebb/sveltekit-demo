@@ -1,4 +1,6 @@
-import { mdsvex } from "mdsvex";
+import mdsvexi from 'mdsvex';
+const { mdsvex } = mdsvexi;
+// import { mdsvex } from "mdsvex";
 import { mdsvexConfig } from "./mdsvex.config.js";
 /** @type {import('@sveltejs/kit').Config} */
 import node from '@sveltejs/adapter-netlify';
