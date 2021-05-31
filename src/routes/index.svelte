@@ -15,10 +15,10 @@
             <a href="./particlerain">Particle Rain</a>: - takes an image and
             messes with it.
         </p>
-        <p>
+        <!-- <p>
             <a href="./canvasexample">Canvas Globe</a> - uses svelte.canvas to display
             a globe.
-        </p>
+        </p> -->
         <!-- <p>
             <a href=./example-markdown>Documentation</a> - Svelte markdown component with instructions on using markdown
         </p> -->
