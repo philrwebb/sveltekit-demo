@@ -1,5 +1,5 @@
 /** @type {import('@types/d3-scale-chromatic')} */
-import {interpolateRainbow} from 'd3-scale-chromatic';
+// import {interpolateRainbow} from 'd3-scale-chromatic';
 
 const N = 360,
 			r = 84;
