@@ -1,25 +1,24 @@
 const c = [
-	() => import("../../../src/routes/__layout.svelte"),
-	() => import("../components/error.svelte"),
-	() => import("../../../src/routes/index.svelte"),
-	() => import("../../../src/routes/example-markdown.md"),
-	() => import("../../../src/routes/fibonaccidoc.md"),
-	() => import("../../../src/routes/particlerain.svelte"),
-	() => import("../../../src/routes/audioplayer/index.svelte"),
-	() => import("../../../src/routes/listviewdoc.md"),
-	() => import("../../../src/routes/covidstats/index.svelte"),
-	() => import("../../../src/routes/fibonacci.svelte"),
-	() => import("../../../src/routes/listview/index.svelte"),
-	() => import("../../../src/routes/settings.svelte"),
-	() => import("../../../src/routes/treedemo/index.svelte"),
-	() => import("../../../src/routes/apidemo/index.svelte"),
-	() => import("../../../src/routes/apidemo/[lastName].svelte"),
-	() => import("../../../src/routes/counter/index.svelte"),
-	() => import("../../../src/routes/dynamic/index.svelte"),
-	() => import("../../../src/routes/pattern.svelte"),
-	() => import("../../../src/routes/tabdemo/index.svelte"),
-	() => import("../../../src/routes/trefoil.svelte"),
-	() => import("../../../src/routes/about.svelte")
+	() => import("..\\..\\..\\src\\routes\\__layout.svelte"),
+	() => import("..\\components\\error.svelte"),
+	() => import("..\\..\\..\\src\\routes\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\example-markdown.md"),
+	() => import("..\\..\\..\\src\\routes\\fibonaccidoc.md"),
+	() => import("..\\..\\..\\src\\routes\\particlerain.svelte"),
+	() => import("..\\..\\..\\src\\routes\\audioplayer\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\listviewdoc.md"),
+	() => import("..\\..\\..\\src\\routes\\covidstats\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\fibonacci.svelte"),
+	() => import("..\\..\\..\\src\\routes\\listview\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\settings.svelte"),
+	() => import("..\\..\\..\\src\\routes\\treedemo\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\apidemo\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\apidemo\\[lastName].svelte"),
+	() => import("..\\..\\..\\src\\routes\\counter\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\dynamic\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\pattern.svelte"),
+	() => import("..\\..\\..\\src\\routes\\tabdemo\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\about.svelte")
 ];
 
 const d = decodeURIComponent;
@@ -76,11 +75,8 @@ export const routes = [
 	// src/routes/tabdemo/index.svelte
 	[/^\/tabdemo\/?$/, [c[0], c[18]], [c[1]]],
 
-	// src/routes/trefoil.svelte
-	[/^\/trefoil\/?$/, [c[0], c[19]], [c[1]]],
-
 	// src/routes/about.svelte
-	[/^\/about\/?$/, [c[0], c[20]], [c[1]]],
+	[/^\/about\/?$/, [c[0], c[19]], [c[1]]],
 
 	// src/routes/api/index.js
 	[/^\/api\/?$/],

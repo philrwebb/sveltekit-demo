@@ -1,5 +1,5 @@
-import mdsvexi from 'mdsvex';
-const { mdsvex } = mdsvexi;
+import { mdsvex } from 'mdsvex';
+// const { mdsvex } = mdsvexi;
 // import { mdsvex } from "mdsvex";
 import { mdsvexConfig } from "./mdsvex.config.js";
 /** @type {import('@sveltejs/kit').Config} */

@@ -1,43 +1,19 @@
 <script>
-    import { setContext } from "svelte";
-    import { writable } from "svelte/store";
+    import {tabsdata} from './tabs.js';
     export let selectedTab = "1";
-    let selectedTabStore = writable(selectedTab);
-    $: $selectedTabStore = selectedTab;
-    $: updateProps($selectedTabStore);
-
+    $: $tabsdata.selectedTab = selectedTab;
+    $: updateProps($tabsdata.selectedTab);
     function updateProps(value) {
         selectedTab = value;
     }
-    setContext("selectedTab", selectedTabStore);
-    let titles = [];
-    setContext("tabTitles", {
-        registerTab(id, title) {
-            titles.push({ id, title });
-            titles = titles;
-        },
-        updateTitle(id, title) {
-            const tabIndex = titles.findIndex((title) => title.id === id);
-            if (tabIndex > -1) {
-                titles[tabIndex].title = title;
-            }
-        },
-        unregisterTab(id) {
-            const tabIndex = titles.findIndex((title) => title.id === id);
-            if (tabIndex > -1) {
-                titles.splice(tabIndex, 1);
-                titles = titles;
-            }
-        },
-    });
 </script>
 
 <div class="container">
-    {#each titles as { id, title }}
+    {#each $tabsdata.titles as { id, title }}
         <button
-            class:selected={$selectedTabStore === id}
+            class:selected={$tabsdata.selectedTab === id}
             on:click={() => {
-                $selectedTabStore = id;
+                $tabsdata.selectedTab = id;
             }}
         >
             {title}
