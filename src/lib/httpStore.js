@@ -2,7 +2,7 @@ import { writable } from 'svelte/store'
 
 // returns a store with HTTP access functions for get, post, patch, delete
 // anytime an HTTP request is made, the store is updated and all subscribers are notified.
-export default function(initial) {
+export default async function(initial) {
   // create the underlying store
   const store = writable(initial)
 
