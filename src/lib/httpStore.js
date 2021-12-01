@@ -42,7 +42,7 @@ export default async function(initial) {
   }
 
   // convenience wrappers for get, post, patch, and delete
-  store.get = (url) => store.request('GET', url)
+  store.get = (url) => await store.request('GET', url)
   store.post = (url, params) => store.request('POST', url, params)
   store.patch = (url, params) => store.request('PATCH', url, params)
   store.delete = (url, params) => store.request('DELETE', url, params)

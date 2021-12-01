@@ -1,17 +1,31 @@
 <script>
-	import {onDestroy, getContext} from 'svelte';
+	import {onDestroy} from 'svelte';
+	import {tabsdata} from './tabs.js';
 	export let title;
 	export let id;
-	let selectedTab = getContext('selectedTab');
-	const tabTitles = getContext('tabTitles');
-	$: tabTitles.updateTitle(id, title); 
-	tabTitles.registerTab(id, title);
+	registerTab(id, title);
 	onDestroy(() => {
-		tabTitles.unregisterTab(id)
+		unregisterTab(id)
 	})
+	function updateTitle(id, title) {
+		const tabIndex = $tabsdata.titles.findIndex((title) => title.id === id);
+		if (tabIndex > -1) {
+			$tabsdata.titles[tabIndex].title = title;
+		}
+	}
+	function registerTab(id, title) {
+		$tabsdata.titles = [{id, title}, ...$tabsdata.titles];
+	}
+	function unregisterTab(id) {
+		const tabIndex = $tabsdata.titles.findIndex((title) => title.id === id);
+		if (tabIndex > -1) {
+			$tabsdata.titles.splice(tabIndex, 1);
+			$tabsdata.titles = [...$tabsdata.titles];
+		}
+	}
 </script>
 <div>
-	{#if $selectedTab === id}
+	{#if $tabsdata.selectedTab === id}
 		<slot />	
 	{/if}
 </div>
