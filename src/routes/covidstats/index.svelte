@@ -1,5 +1,5 @@
 <script>
-        import numeral from "numeral";
+        // import numeral from "numeral";
         import http from "$lib/httpStore.js";
         import List from "$lib/listview/list.svelte";
         $: showDetail = false;
