@@ -1,9 +1,9 @@
 import {respond} from "@sveltejs/kit/ssr";
-import {create_ssr_component, validate_component, missing_component, escape, add_attribute, subscribe, each, is_promise, set_store_value} from "svelte/internal";
+import {create_ssr_component, validate_component, missing_component, escape, add_attribute, each, subscribe, noop, is_promise, set_store_value} from "svelte/internal";
 import {setContext, afterUpdate, onMount, createEventDispatcher, onDestroy} from "svelte";
 import faker from "faker";
-import numeral from "numeral";
 import {writable} from "svelte/store";
+import numeral from "numeral";
 var root_svelte_svelte_type_style_lang = "#svelte-announcer.svelte-1j55zn5{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}";
 const css$k = {
   code: "#svelte-announcer.svelte-1j55zn5{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}",
@@ -75,9 +75,9 @@ function init(settings2) {
     amp: false,
     dev: false,
     entry: {
-      file: "/./_app/start-562c6de2.js",
+      file: "/./_app/start-3f680d81.js",
       css: ["/./_app/assets/start-a8cd1609.css"],
-      js: ["/./_app/start-562c6de2.js", "/./_app/chunks/vendor-6df07bd0.js"]
+      js: ["/./_app/start-3f680d81.js", "/./_app/chunks/vendor-15d19e34.js"]
     },
     fetched: void 0,
     floc: false,
@@ -319,7 +319,7 @@ const module_lookup = {
     return about;
   })
 };
-const metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-9105860c.js", "css": ["/./_app/assets/pages/__layout.svelte-7d55c0ac.css"], "js": ["/./_app/pages/__layout.svelte-9105860c.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-3509a2d1.js", "css": [], "js": ["/./_app/error.svelte-3509a2d1.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-4387430a.js", "css": ["/./_app/assets/pages/index.svelte-6a899900.css"], "js": ["/./_app/pages/index.svelte-4387430a.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/example-markdown.md": {"entry": "/./_app/pages/example-markdown.md-05198031.js", "css": [], "js": ["/./_app/pages/example-markdown.md-05198031.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/fibonaccidoc.md": {"entry": "/./_app/pages/fibonaccidoc.md-499bdd49.js", "css": [], "js": ["/./_app/pages/fibonaccidoc.md-499bdd49.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/particlerain.svelte": {"entry": "/./_app/pages/particlerain.svelte-f9b824f0.js", "css": ["/./_app/assets/pages/particlerain.svelte-f46ffd44.css"], "js": ["/./_app/pages/particlerain.svelte-f9b824f0.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/audioplayer/index.svelte": {"entry": "/./_app/pages/audioplayer/index.svelte-9db364ca.js", "css": ["/./_app/assets/pages/audioplayer/index.svelte-60b66078.css"], "js": ["/./_app/pages/audioplayer/index.svelte-9db364ca.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/listviewdoc.md": {"entry": "/./_app/pages/listviewdoc.md-4ba8a50b.js", "css": [], "js": ["/./_app/pages/listviewdoc.md-4ba8a50b.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/covidstats/index.svelte": {"entry": "/./_app/pages/covidstats/index.svelte-601de048.js", "css": ["/./_app/assets/pages/covidstats/index.svelte-45a94576.css"], "js": ["/./_app/pages/covidstats/index.svelte-601de048.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/fibonacci.svelte": {"entry": "/./_app/pages/fibonacci.svelte-6b01c554.js", "css": ["/./_app/assets/pages/fibonacci.svelte-16b5df49.css"], "js": ["/./_app/pages/fibonacci.svelte-6b01c554.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/listview/index.svelte": {"entry": "/./_app/pages/listview/index.svelte-02e09ccb.js", "css": ["/./_app/assets/pages/listview/index.svelte-7310ad12.css"], "js": ["/./_app/pages/listview/index.svelte-02e09ccb.js", "/./_app/chunks/vendor-6df07bd0.js", "/./_app/chunks/stores-b4081be3.js"], "styles": null}, "src/routes/settings.svelte": {"entry": "/./_app/pages/settings.svelte-74a62742.js", "css": [], "js": ["/./_app/pages/settings.svelte-74a62742.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/treedemo/index.svelte": {"entry": "/./_app/pages/treedemo/index.svelte-6c4eeb0d.js", "css": ["/./_app/assets/about.svelte_svelte&type=style&lang-42f179f3.css", "/./_app/assets/index-1469acc4.css", "/./_app/assets/pages/particlerain.svelte-f46ffd44.css", "/./_app/assets/pages/pattern.svelte-ec6175e4.css", "/./_app/assets/pages/audioplayer/index.svelte-60b66078.css"], "js": ["/./_app/pages/treedemo/index.svelte-6c4eeb0d.js", "/./_app/chunks/vendor-6df07bd0.js", "/./_app/chunks/index-4f08dbf1.js", "/./_app/pages/particlerain.svelte-f9b824f0.js", "/./_app/pages/example-markdown.md-05198031.js", "/./_app/pages/pattern.svelte-66f9dc69.js", "/./_app/pages/listviewdoc.md-4ba8a50b.js", "/./_app/pages/audioplayer/index.svelte-9db364ca.js"], "styles": null}, "src/routes/apidemo/index.svelte": {"entry": "/./_app/pages/apidemo/index.svelte-6caa306f.js", "css": ["/./_app/assets/pages/apidemo/index.svelte-1ff651ee.css"], "js": ["/./_app/pages/apidemo/index.svelte-6caa306f.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/apidemo/[lastName].svelte": {"entry": "/./_app/pages/apidemo/[lastName].svelte-a4ed1b7e.js", "css": ["/./_app/assets/pages/apidemo/[lastName].svelte-b1dad7d8.css"], "js": ["/./_app/pages/apidemo/[lastName].svelte-a4ed1b7e.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/counter/index.svelte": {"entry": "/./_app/pages/counter/index.svelte-efa825a6.js", "css": ["/./_app/assets/pages/counter/index.svelte-dbcfad1d.css"], "js": ["/./_app/pages/counter/index.svelte-efa825a6.js", "/./_app/chunks/vendor-6df07bd0.js", "/./_app/chunks/stores-b4081be3.js"], "styles": null}, "src/routes/dynamic/index.svelte": {"entry": "/./_app/pages/dynamic/index.svelte-b82a60b6.js", "css": [], "js": ["/./_app/pages/dynamic/index.svelte-b82a60b6.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/pattern.svelte": {"entry": "/./_app/pages/pattern.svelte-66f9dc69.js", "css": ["/./_app/assets/pages/pattern.svelte-ec6175e4.css"], "js": ["/./_app/pages/pattern.svelte-66f9dc69.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}, "src/routes/tabdemo/index.svelte": {"entry": "/./_app/pages/tabdemo/index.svelte-aac44f64.js", "css": ["/./_app/assets/pages/tabdemo/index.svelte-5920d885.css", "/./_app/assets/about.svelte_svelte&type=style&lang-42f179f3.css", "/./_app/assets/index-1469acc4.css", "/./_app/assets/pages/particlerain.svelte-f46ffd44.css", "/./_app/assets/pages/pattern.svelte-ec6175e4.css", "/./_app/assets/pages/audioplayer/index.svelte-60b66078.css", "/./_app/assets/pages/fibonacci.svelte-16b5df49.css", "/./_app/assets/pages/covidstats/index.svelte-45a94576.css"], "js": ["/./_app/pages/tabdemo/index.svelte-aac44f64.js", "/./_app/chunks/vendor-6df07bd0.js", "/./_app/chunks/index-4f08dbf1.js", "/./_app/pages/particlerain.svelte-f9b824f0.js", "/./_app/pages/example-markdown.md-05198031.js", "/./_app/pages/pattern.svelte-66f9dc69.js", "/./_app/pages/listviewdoc.md-4ba8a50b.js", "/./_app/pages/audioplayer/index.svelte-9db364ca.js", "/./_app/pages/fibonacci.svelte-6b01c554.js", "/./_app/pages/covidstats/index.svelte-601de048.js"], "styles": null}, "src/routes/about.svelte": {"entry": "/./_app/pages/about.svelte-c9ac7bfa.js", "css": ["/./_app/assets/about.svelte_svelte&type=style&lang-42f179f3.css"], "js": ["/./_app/pages/about.svelte-c9ac7bfa.js", "/./_app/chunks/vendor-6df07bd0.js"], "styles": null}};
+const metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-e07d7b58.js", "css": ["/./_app/assets/pages/__layout.svelte-7d55c0ac.css"], "js": ["/./_app/pages/__layout.svelte-e07d7b58.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-19c23558.js", "css": [], "js": ["/./_app/error.svelte-19c23558.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-e2a5864b.js", "css": ["/./_app/assets/pages/index.svelte-6a899900.css"], "js": ["/./_app/pages/index.svelte-e2a5864b.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/example-markdown.md": {"entry": "/./_app/pages/example-markdown.md-cab4326d.js", "css": [], "js": ["/./_app/pages/example-markdown.md-cab4326d.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/fibonaccidoc.md": {"entry": "/./_app/pages/fibonaccidoc.md-0c02f57a.js", "css": [], "js": ["/./_app/pages/fibonaccidoc.md-0c02f57a.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/particlerain.svelte": {"entry": "/./_app/pages/particlerain.svelte-a9e6e2f2.js", "css": ["/./_app/assets/pages/particlerain.svelte-f46ffd44.css"], "js": ["/./_app/pages/particlerain.svelte-a9e6e2f2.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/audioplayer/index.svelte": {"entry": "/./_app/pages/audioplayer/index.svelte-f7869249.js", "css": ["/./_app/assets/pages/audioplayer/index.svelte-60b66078.css"], "js": ["/./_app/pages/audioplayer/index.svelte-f7869249.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/listviewdoc.md": {"entry": "/./_app/pages/listviewdoc.md-4c52f2cd.js", "css": [], "js": ["/./_app/pages/listviewdoc.md-4c52f2cd.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/covidstats/index.svelte": {"entry": "/./_app/pages/covidstats/index.svelte-3d90dc19.js", "css": ["/./_app/assets/pages/covidstats/index.svelte-eb0598ea.css", "/./_app/assets/list-388239ef.css"], "js": ["/./_app/pages/covidstats/index.svelte-3d90dc19.js", "/./_app/chunks/vendor-15d19e34.js", "/./_app/chunks/list-a9e31b5a.js"], "styles": null}, "src/routes/fibonacci.svelte": {"entry": "/./_app/pages/fibonacci.svelte-f448facd.js", "css": ["/./_app/assets/pages/fibonacci.svelte-16b5df49.css"], "js": ["/./_app/pages/fibonacci.svelte-f448facd.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/listview/index.svelte": {"entry": "/./_app/pages/listview/index.svelte-89231bbd.js", "css": ["/./_app/assets/pages/listview/index.svelte-a212d4bf.css", "/./_app/assets/list-388239ef.css"], "js": ["/./_app/pages/listview/index.svelte-89231bbd.js", "/./_app/chunks/vendor-15d19e34.js", "/./_app/chunks/list-a9e31b5a.js", "/./_app/chunks/stores-78a7f08e.js"], "styles": null}, "src/routes/settings.svelte": {"entry": "/./_app/pages/settings.svelte-9cbcec07.js", "css": [], "js": ["/./_app/pages/settings.svelte-9cbcec07.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/treedemo/index.svelte": {"entry": "/./_app/pages/treedemo/index.svelte-7e48b137.js", "css": ["/./_app/assets/about.svelte_svelte&type=style&lang-42f179f3.css", "/./_app/assets/index-1469acc4.css", "/./_app/assets/pages/particlerain.svelte-f46ffd44.css", "/./_app/assets/pages/pattern.svelte-ec6175e4.css", "/./_app/assets/pages/audioplayer/index.svelte-60b66078.css"], "js": ["/./_app/pages/treedemo/index.svelte-7e48b137.js", "/./_app/chunks/vendor-15d19e34.js", "/./_app/chunks/index-a7e32281.js", "/./_app/pages/particlerain.svelte-a9e6e2f2.js", "/./_app/pages/example-markdown.md-cab4326d.js", "/./_app/pages/pattern.svelte-2f788637.js", "/./_app/pages/listviewdoc.md-4c52f2cd.js", "/./_app/pages/audioplayer/index.svelte-f7869249.js"], "styles": null}, "src/routes/apidemo/index.svelte": {"entry": "/./_app/pages/apidemo/index.svelte-48fe60fa.js", "css": ["/./_app/assets/pages/apidemo/index.svelte-1ff651ee.css"], "js": ["/./_app/pages/apidemo/index.svelte-48fe60fa.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/apidemo/[lastName].svelte": {"entry": "/./_app/pages/apidemo/[lastName].svelte-b9570562.js", "css": ["/./_app/assets/pages/apidemo/[lastName].svelte-b1dad7d8.css"], "js": ["/./_app/pages/apidemo/[lastName].svelte-b9570562.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/counter/index.svelte": {"entry": "/./_app/pages/counter/index.svelte-244c6587.js", "css": ["/./_app/assets/pages/counter/index.svelte-dbcfad1d.css"], "js": ["/./_app/pages/counter/index.svelte-244c6587.js", "/./_app/chunks/vendor-15d19e34.js", "/./_app/chunks/stores-78a7f08e.js"], "styles": null}, "src/routes/dynamic/index.svelte": {"entry": "/./_app/pages/dynamic/index.svelte-26e4d33c.js", "css": [], "js": ["/./_app/pages/dynamic/index.svelte-26e4d33c.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/pattern.svelte": {"entry": "/./_app/pages/pattern.svelte-2f788637.js", "css": ["/./_app/assets/pages/pattern.svelte-ec6175e4.css"], "js": ["/./_app/pages/pattern.svelte-2f788637.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}, "src/routes/tabdemo/index.svelte": {"entry": "/./_app/pages/tabdemo/index.svelte-fd4e9108.js", "css": ["/./_app/assets/pages/tabdemo/index.svelte-5920d885.css", "/./_app/assets/about.svelte_svelte&type=style&lang-42f179f3.css", "/./_app/assets/index-1469acc4.css", "/./_app/assets/pages/particlerain.svelte-f46ffd44.css", "/./_app/assets/pages/pattern.svelte-ec6175e4.css", "/./_app/assets/pages/audioplayer/index.svelte-60b66078.css", "/./_app/assets/pages/fibonacci.svelte-16b5df49.css", "/./_app/assets/pages/covidstats/index.svelte-eb0598ea.css", "/./_app/assets/list-388239ef.css"], "js": ["/./_app/pages/tabdemo/index.svelte-fd4e9108.js", "/./_app/chunks/vendor-15d19e34.js", "/./_app/chunks/index-a7e32281.js", "/./_app/pages/particlerain.svelte-a9e6e2f2.js", "/./_app/pages/example-markdown.md-cab4326d.js", "/./_app/pages/pattern.svelte-2f788637.js", "/./_app/pages/listviewdoc.md-4c52f2cd.js", "/./_app/pages/audioplayer/index.svelte-f7869249.js", "/./_app/pages/fibonacci.svelte-f448facd.js", "/./_app/pages/covidstats/index.svelte-3d90dc19.js", "/./_app/chunks/list-a9e31b5a.js"], "styles": null}, "src/routes/about.svelte": {"entry": "/./_app/pages/about.svelte-bff5dea8.js", "css": ["/./_app/assets/about.svelte_svelte&type=style&lang-42f179f3.css"], "js": ["/./_app/pages/about.svelte-bff5dea8.js", "/./_app/chunks/vendor-15d19e34.js"], "styles": null}};
 async function load_component(file) {
   return {
     module: await module_lookup[file](),
@@ -956,7 +956,7 @@ var listviewdoc = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": Listviewdoc
 });
-async function http(initial) {
+function http(initial) {
   const store = writable(initial);
   console.log(initial);
   store.request = async (method, url, params = null) => {
@@ -985,85 +985,11 @@ async function http(initial) {
   store.post = (url, params) => store.request("POST", url, params);
   store.patch = (url, params) => store.request("PATCH", url, params);
   store.delete = (url, params) => store.request("DELETE", url, params);
-  store.subscribe = (value) => store.subscribe(value);
   console.log(store);
   return store;
 }
-var index_svelte_svelte_type_style_lang$4 = ".resultscontainer.svelte-cx23fc{display:grid;align-content:space-between}";
-const css$e = {
-  code: ".resultscontainer.svelte-cx23fc{display:grid;align-content:space-between}",
-  map: '{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script>\\n  // import numeral from \\"numeral\\";\\n  import http from \\"$lib/httpStore.js\\";\\n  import { onMount } from \\"svelte\\";\\n  //   import List from \\"$lib/listview/list.svelte\\";\\n//   $: showDetail = false;\\n//   $: rowdata = [];\\n//   $: detailrowdata = [];\\n//   $: summaryheaderrowdata = [];\\n//   $: detailheaderrowdata = [];\\n//   $: pickedRow = [];\\n  const covidSummary = http({});\\n  const covidDetail = http([]);\\n  let a = $covidSummary;\\n  // covidSummary.get(\\"https://api.covid19api.com/summary\\");\\n  // onMount(() => {\\n  //   console.log(\\"here\\");\\n\\n  //   //     console.log($covidSummary);\\n  // });\\n  // function handleMessage(event) {\\n  //   let pickedCountryCode = event.detail.rowvalue[0];\\n  //   if (event.detail.rowno > 0) {\\n  //     pickedRow = $covidSummary.Countries.filter(\\n  //       (c) => c.Country === pickedCountryCode\\n  //     );\\n  //     if (pickedRow.length == 1) {\\n  //       console.log(pickedRow[0].Slug);\\n  //       covidDetail.get(\\n  //         `https://api.covid19api.com/total/country/${pickedRow[0].Slug}`\\n  //       );\\n  //     }\\n  //   }\\n  // }\\n  /* Toggles between summary screen and detail screen */\\n  function toggleShowDetail() {\\n    if (showDetail) {\\n      detailrowdata = [];\\n    }\\n    showDetail = !showDetail;\\n  }\\n  //   /* Populate the Detail data */\\n  //   covidDetail.subscribe((value) => {\\n  //     if (value.length && value.length > 0) {\\n  //       showDetail = true;\\n  //       detailrowdata = [];\\n\\n  //       let lastDeaths = 0;\\n  //       let lastConfirmed = 0;\\n  //       /* Detail Rows */\\n  //       value.forEach((element) => {\\n  //         detailrowdata.push([\\n  //           element.Confirmed,\\n  //           element.Confirmed - lastConfirmed,\\n  //           element.Deaths,\\n  //           element.Deaths - lastDeaths,\\n  //           element.Recovered,\\n  //           element.Active,\\n  //           new Date(element.Date).toISOString().slice(0, 10),\\n  //         ]);\\n  //         lastDeaths = element.Deaths;\\n  //         lastConfirmed = element.Confirmed;\\n  //       });\\n  //       /* sort by descending date */\\n  //       detailrowdata.sort((a, b) => (a[6] < a[6] ? 1 : -1));\\n  //       /* Heading Row */\\n  //       detailheaderrowdata = [\\n  //         \\"Confirmed\\",\\n  //         \\"New Confirmed\\",\\n  //         \\"Deaths\\",\\n  //         \\"New Deaths\\",\\n  //         \\"Recovered\\",\\n  //         \\"Active\\",\\n  //         \\"Date\\",\\n  //       ];\\n  //     }\\n  //   });\\n  /* populate the summary data */\\n  //   covidSummary.subscribe((value) => {\\n  //     if (value.Global) {\\n  //       rowdata = [];\\n  //       /* Heading Row */\\n  //       summaryheaderrowdata = [\\n  //         \\"Country\\",\\n  //         \\"New Confirmed\\",\\n  //         \\"Total Confirmed\\",\\n  //         \\"New Deaths\\",\\n  //         \\"Total Deaths\\",\\n  //         \\"New Recovered\\",\\n  //         \\"Total Recovered\\",\\n  //       ];\\n  //       /* World Data */\\n  //       rowdata.push([\\n  //         \\"World\\",\\n  //         value.Global.NewConfirmed,\\n  //         value.Global.TotalConfirmed,\\n  //         value.Global.NewDeaths,\\n  //         value.Global.TotalDeaths,\\n  //         value.Global.NewRecovered,\\n  //         value.Global.TotalRecovered,\\n  //       ]);\\n  //       /* Country Data */\\n  //       value.Countries.forEach((element) => {\\n  //         rowdata.push([\\n  //           element.Country,\\n  //           element.NewConfirmed,\\n  //           element.TotalConfirmed,\\n  //           element.NewDeaths,\\n  //           element.TotalDeaths,\\n  //           element.NewRecovered,\\n  //           element.TotalRecovered,\\n  //         ]);\\n  //       });\\n  //     }\\n  //   });\\n</script>\\n\\n<div class=\\"resultscontainer\\">\\n  <!-- {#if $covidSummary.Countries && $covidSummary.Global}\\n  <div class=\\"resultscontainer\\">\\n    {#if !showDetail}\\n      <div class=\\"rowdata\\">\\n        <h1>Country Data - click on any row for detailed data</h1>\\n        <List\\n          {rowdata}\\n          headerdata={summaryheaderrowdata}\\n          on:rowSelected={handleMessage}\\n          sortCol=\\"0\\"\\n        />\\n      </div>\\n    {:else} -->\\n  <!-- <div class=\\"spacer\\" />  -->\\n\\n  <!-- {#if detailrowdata && detailrowdata.length > 0}\\n        <div class=\\"detailrowdata\\">\\n          <div class=\\"header\\">\\n            <h1>\\n              Detail Data about {pickedRow[0].Country}\\n            </h1>\\n\\n            <button on:click={toggleShowDetail}\\n              >Return to Country Summary</button\\n            >\\n          </div>\\n          <List\\n            rowdata={detailrowdata}\\n            headerdata={detailheaderrowdata}\\n            sortCol=\\"6\\"\\n          />\\n        </div>\\n      {/if}\\n    {/if} -->\\n</div>\\n\\n<!-- {:else}\\n  <p>loading . . .</p>\\n{/if} -->\\n<style>\\n  .resultscontainer {\\n    display: grid;\\n    align-content: space-between;\\n  }\\n  /* .header {\\n    display: grid;\\n    grid-template-columns: 1fr 1fr;\\n    justify-items: left;\\n    align-items: center;\\n    align-content: space-around;\\n  }\\n  button {\\n    /* margin-bottom: 10px; */\\n  /* cursor: pointer; */\\n  /* } */\\n</style>\\n"],"names":[],"mappings":"AA8JE,iBAAiB,cAAC,CAAC,AACjB,OAAO,CAAE,IAAI,CACb,aAAa,CAAE,aAAa,AAC9B,CAAC"}'
-};
-const Covidstats = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$unsubscribe_covidSummary;
-  const covidSummary = http({});
-  $$unsubscribe_covidSummary = subscribe(covidSummary, (value) => value);
-  http([]);
-  $$result.css.add(css$e);
-  $$unsubscribe_covidSummary();
-  return `<div class="${"resultscontainer svelte-cx23fc"}">
-  
-
-  </div>
-
-`;
-});
-var index$6 = /* @__PURE__ */ Object.freeze({
-  __proto__: null,
-  [Symbol.toStringTag]: "Module",
-  "default": Covidstats
-});
-var fibonacci_svelte_svelte_type_style_lang = ".fibcontainer.svelte-1jsrbd7{display:grid;grid-template-columns:1fr;gap:20px;margin-left:10%;margin-right:10%}textarea.svelte-1jsrbd7{height:500px;border-bottom:100px;padding-bottom:100px}";
-const css$d = {
-  code: ".fibcontainer.svelte-1jsrbd7{display:grid;grid-template-columns:1fr;gap:20px;margin-left:10%;margin-right:10%}textarea.svelte-1jsrbd7{height:500px;border-bottom:100px;padding-bottom:100px}",
-  map: '{"version":3,"file":"fibonacci.svelte","sources":["fibonacci.svelte"],"sourcesContent":["<script>\\n    import { onMount } from \\"svelte\\";\\n    let fibstring1 = \\"\\";\\n    let modstr1 = \\"\\";\\n    let modstr2 = \\"\\";\\n    let fibnumber = 50;\\n    $: {\\n        if (fibnumber > 2) {\\n            fibstring1 = \\"fib(\\"+fibnumber.toString() + \\") = \\" + fibfn2(fibnumber).toString();\\n            // modstr1 = fibmod(fibnumber,9);\\n            // modstr2 = fibmod(fibnumber, 11);\\n        }\\n    }\\n    const fibfnrecursive = (n) => {\\n        if (n < 2) return 1;\\n        return BigInt(fibfnrecursive(n - 1)) + BigInt(fibfnrecursive(n - 2));\\n    };\\n    const fibfn = (n) => {\\n        let fib = [BigInt(0)];\\n        let f = 0;\\n        for (let k = 1; k <= n; k++) {\\n            if (k <= 2) {\\n                f = 1;\\n            } else {\\n                f = BigInt(fib[k - 1]) + BigInt(fib[k - 2]);\\n                if (k >= 4) fib[k - 3] = 0;\\n            }\\n            fib.push(f);\\n        }\\n        return fib[n];\\n    };\\n    const fibfn2 = (n) => {\\n        if (n < 2) return 1;\\n        let n_1 = BigInt(1),\\n            n_2 = BigInt(1);\\n        for (let i = 2; i <= n; i += 1) {\\n            let n_new = BigInt(n_1) + BigInt(n_2);\\n            n_1 = n_2;\\n            n_2 = n_new;\\n        }\\n        return n_2;\\n    };\\n    const fibmod = (n, m) => {\\n        let modstr = \\"\\";\\n        for (let i = 2; i <= n; i++) {\\n            modstr += (fibfn2(i) % BigInt(m)).toString() + \\" \\";\\n        }\\n        return \\"fib(\\" + n.toString() + \\") mod \\" + m.toString() + \\" = \\" + modstr;\\n    }\\n    onMount(() => {\\n        fibstring1 = \\"fib(\\"+fibnumber.toString() + \\") = \\" + fibfn2(fibnumber).toString();\\n        modstr1 = fibmod(fibnumber, 3);\\n        modstr2 = fibmod(fibnumber, 5);\\n        // console.log(fibstring1.length);\\n    });\\n</script>\\n\\n<style>\\n    .fibcontainer {\\n        display: grid;\\n        grid-template-columns: 1fr;\\n        gap: 20px;\\n        margin-left: 10%;\\n        margin-right: 10%;\\n        /* gap: 100px;\\n        border-bottom: 10px; */\\n    }\\n    textarea {\\n        height: 500px;\\n        border-bottom: 100px;\\n        padding-bottom: 100px;\\n    }\\n</style>\\n\\n<div class=\\"fibcontainer\\">\\n    <p>Fibonacci number: {fibnumber}</p>\\n    <input type=\\"number\\" bind:value={fibnumber} />\\n    <textarea name=\\"\\" id=\\"\\" cols=\\"200\\" rows=\\"200\\">{fibstring1}</textarea>\\n    <!-- <textarea>{modstr1}</textarea>\\n    <textarea>{modstr2}</textarea> -->\\n</div>\\n"],"names":[],"mappings":"AA0DI,aAAa,eAAC,CAAC,AACX,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,GAAG,CAC1B,GAAG,CAAE,IAAI,CACT,WAAW,CAAE,GAAG,CAChB,YAAY,CAAE,GAAG,AAGrB,CAAC,AACD,QAAQ,eAAC,CAAC,AACN,MAAM,CAAE,KAAK,CACb,aAAa,CAAE,KAAK,CACpB,cAAc,CAAE,KAAK,AACzB,CAAC"}'
-};
-const Fibonacci = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let fibstring1 = "";
-  let fibnumber = 50;
-  const fibfn2 = (n) => {
-    if (n < 2)
-      return 1;
-    let n_1 = BigInt(1), n_2 = BigInt(1);
-    for (let i = 2; i <= n; i += 1) {
-      let n_new = BigInt(n_1) + BigInt(n_2);
-      n_1 = n_2;
-      n_2 = n_new;
-    }
-    return n_2;
-  };
-  const fibmod = (n, m) => {
-    let modstr = "";
-    for (let i = 2; i <= n; i++) {
-      modstr += (fibfn2(i) % BigInt(m)).toString() + " ";
-    }
-    return "fib(" + n.toString() + ") mod " + m.toString() + " = " + modstr;
-  };
-  onMount(() => {
-    fibstring1 = "fib(" + fibnumber.toString() + ") = " + fibfn2(fibnumber).toString();
-    fibmod(fibnumber, 3);
-    fibmod(fibnumber, 5);
-  });
-  $$result.css.add(css$d);
-  {
-    {
-      {
-        fibstring1 = "fib(" + fibnumber.toString() + ") = " + fibfn2(fibnumber).toString();
-      }
-    }
-  }
-  return `<div class="${"fibcontainer svelte-1jsrbd7"}"><p>Fibonacci number: ${escape(fibnumber)}</p>
-    <input type="${"number"}"${add_attribute("value", fibnumber, 1)}>
-    <textarea name="${""}" id="${""}" cols="${"200"}" rows="${"200"}" class="${"svelte-1jsrbd7"}">${escape(fibstring1)}</textarea>
-    </div>`;
-});
-var fibonacci = /* @__PURE__ */ Object.freeze({
-  __proto__: null,
-  [Symbol.toStringTag]: "Module",
-  "default": Fibonacci
-});
 var cell_svelte_svelte_type_style_lang = "span.svelte-1evchla{border:black 0.5px solid;padding-left:2px;padding-right:2px;padding-top:1px;padding-bottom:1px;text-align:left}.number.svelte-1evchla{text-align:right}.header.svelte-1evchla{text-align:center}";
-const css$c = {
+const css$e = {
   code: "span.svelte-1evchla{border:black 0.5px solid;padding-left:2px;padding-right:2px;padding-top:1px;padding-bottom:1px;text-align:left}.number.svelte-1evchla{text-align:right}.header.svelte-1evchla{text-align:center}",
   map: '{"version":3,"file":"cell.svelte","sources":["cell.svelte"],"sourcesContent":["<script>\\n    import numeral from \\"numeral\\";\\n    import { createEventDispatcher } from \\"svelte\\";\\n    const dispatch = createEventDispatcher();\\n    export let cellvalue = \\"\\";\\n    export let rowType = \\"Row\\";\\n\\n    $: displayValue = !isNaN(cellvalue)\\n        ? numeral(cellvalue).format(\\"0,0\\")\\n        : cellvalue;\\n    export let cellno = 0;\\n    export let rowno = 0;\\n    function sendMessage() {\\n        if (rowno === 0) {\\n            dispatch(\\"columnSelected\\", {\\n                cellno: cellno,\\n            });\\n        }\\n    }\\n</script>\\n\\n{#if !isNaN(cellvalue)}\\n    <span class=\\"number\\" on:click|self={sendMessage}> {displayValue} </span>\\n{:else if rowType === \\"Header\\"}\\n    <span class=\\"header\\" on:click|self={sendMessage}>{displayValue}</span>\\n{:else}\\n    <span on:click|self={sendMessage}>{displayValue}</span>\\n{/if}\\n\\n<style scoped>\\n    span {\\n        border: black 0.5px solid;\\n        padding-left: 2px;\\n        padding-right: 2px;\\n        padding-top: 1px;\\n        padding-bottom: 1px;\\n        text-align: left;\\n    }\\n    .number {\\n        text-align: right;\\n    }\\n    .header {\\n        text-align: center;\\n    }\\n</style>\\n"],"names":[],"mappings":"AA8BI,IAAI,eAAC,CAAC,AACF,MAAM,CAAE,KAAK,CAAC,KAAK,CAAC,KAAK,CACzB,YAAY,CAAE,GAAG,CACjB,aAAa,CAAE,GAAG,CAClB,WAAW,CAAE,GAAG,CAChB,cAAc,CAAE,GAAG,CACnB,UAAU,CAAE,IAAI,AACpB,CAAC,AACD,OAAO,eAAC,CAAC,AACL,UAAU,CAAE,KAAK,AACrB,CAAC,AACD,OAAO,eAAC,CAAC,AACL,UAAU,CAAE,MAAM,AACtB,CAAC"}'
 };
@@ -1082,12 +1008,12 @@ const Cell = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.cellno(cellno);
   if ($$props.rowno === void 0 && $$bindings.rowno && rowno !== void 0)
     $$bindings.rowno(rowno);
-  $$result.css.add(css$c);
+  $$result.css.add(css$e);
   displayValue = !isNaN(cellvalue) ? numeral(cellvalue).format("0,0") : cellvalue;
   return `${!isNaN(cellvalue) ? `<span class="${"number svelte-1evchla"}">${escape(displayValue)}</span>` : `${rowType === "Header" ? `<span class="${"header svelte-1evchla"}">${escape(displayValue)}</span>` : `<span class="${"svelte-1evchla"}">${escape(displayValue)}</span>`}`}`;
 });
 var row_svelte_svelte_type_style_lang = ".rowcontainer.svelte-1h03l0e{display:grid;justify-content:right}";
-const css$b = {
+const css$d = {
   code: ".rowcontainer.svelte-1h03l0e{display:grid;justify-content:right}",
   map: '{"version":3,"file":"row.svelte","sources":["row.svelte"],"sourcesContent":["<script>\\n    import { createEventDispatcher, onMount } from \\"svelte\\";\\n    const dispatch = createEventDispatcher();\\n    function sendMessage() {\\n        dispatch(\\"rowSelected\\", {\\n            rowvalue: rowvalue,\\n            rowno,\\n        });\\n    }\\n    import Cell from \\"./cell.svelte\\";\\n    export let rowType = \\"row\\";\\n    export let rowvalue;\\n    export let rowno = 0;\\n    onMount(() => {\\n        console.log(Array.isArray(rowvalue));\\n    });\\n    let nocols = rowvalue.length;\\n    const gap = \\"1px\\";\\n</script>\\n\\n<slot>\\n    <div\\n        class=\\"rowcontainer\\"\\n        style=\\"grid-template-columns: repeat({nocols},1fr);grid-gap: {gap};\\"\\n        on:click={sendMessage}\\n    >\\n        {#each rowvalue as cellvalue, cellno}\\n            <Cell {cellvalue} {rowno} {cellno} {rowType} on:columnSelected />\\n        {/each}\\n    </div>\\n</slot>\\n\\n<style scoped>\\n    .rowcontainer {\\n        display: grid;\\n        justify-content: right;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAiCI,aAAa,eAAC,CAAC,AACX,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,KAAK,AAC1B,CAAC"}'
 };
@@ -1107,13 +1033,13 @@ const Row = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.rowvalue(rowvalue);
   if ($$props.rowno === void 0 && $$bindings.rowno && rowno !== void 0)
     $$bindings.rowno(rowno);
-  $$result.css.add(css$b);
+  $$result.css.add(css$d);
   return `${slots.default ? slots.default({}) : `
     <div class="${"rowcontainer svelte-1h03l0e"}" style="${"grid-template-columns: repeat(" + escape(nocols) + ",1fr);grid-gap: " + escape(gap$1) + ";"}">${each(rowvalue, (cellvalue, cellno) => `${validate_component(Cell, "Cell").$$render($$result, {cellvalue, rowno, cellno, rowType}, {}, {})}`)}</div>
 `}`;
 });
 var list_svelte_svelte_type_style_lang = ".listcontainer.svelte-ddf3fd{display:grid;cursor:pointer}";
-const css$a = {
+const css$c = {
   code: ".listcontainer.svelte-ddf3fd{display:grid;cursor:pointer}",
   map: '{"version":3,"file":"list.svelte","sources":["list.svelte"],"sourcesContent":["<script>\\n    import numeral from \\"numeral\\";\\n    import Row from \\"./row.svelte\\";\\n    export let rowdata;\\n    export let headerdata;\\n    export let sortCol = 0;\\n\\n    const gap = \\"1px\\";\\n    const compareDesc = (a, b) => {\\n        if (\\n            (!isNaN(a[sortCol]) && numeral(a[sortCol]).value() < numeral(b[sortCol]).value()) ||\\n            (isNaN(a[sortCol]) && a[sortCol] < b[sortCol])\\n        ) {\\n            return 1;\\n        } else {\\n            return -1;\\n        }\\n    };\\n    const compareAsc = (a, b) => {\\n        if (\\n            (!isNaN(a[sortCol]) && numeral(a[sortCol]).value() > numeral(b[sortCol]).value()) ||\\n            (isNaN(a[sortCol]) && a[sortCol] > b[sortCol])\\n        ) {\\n            return 1;\\n        } else {\\n            return -1;\\n        }\\n    };\\n    $: sortAsc = true;\\n    $: compareFunc = sortAsc ? compareAsc : compareDesc;\\n    $: rowdata = [...rowdata.sort(compareFunc)];\\n    function sortColumn(event) {\\n        console.log(sortCol);\\n        let clickedColumn = event.detail.cellno;\\n        if (clickedColumn !== sortCol) {\\n            sortAsc = !sortAsc;\\n        } else {\\n            sortAsc = !sortAsc;\\n        }\\n        sortCol = clickedColumn;\\n        console.log(sortCol);\\n    }\\n</script>\\n\\n<div class=\\"listcontainer\\" style=\\"grid-gap: {gap}\\">\\n    {#if headerdata}\\n        <Row rowvalue={headerdata} on:columnSelected={sortColumn} rowType=\\"Header\\" />\\n    {/if}\\n    {#each rowdata as rowvalue, rowno}\\n        <Row {rowvalue} on:rowSelected {rowno} on:columnSelected={sortColumn} />\\n    {:else}\\n        No Data Provided\\n    {/each}\\n</div>\\n\\n<style>\\n    .listcontainer {\\n        display: grid;\\n        cursor: pointer;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAwDI,cAAc,cAAC,CAAC,AACZ,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,OAAO,AACnB,CAAC"}'
 };
@@ -1144,13 +1070,181 @@ const List = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.headerdata(headerdata);
   if ($$props.sortCol === void 0 && $$bindings.sortCol && sortCol !== void 0)
     $$bindings.sortCol(sortCol);
-  $$result.css.add(css$a);
+  $$result.css.add(css$c);
   sortAsc = true;
   compareFunc = sortAsc ? compareAsc : compareDesc;
   rowdata = [...rowdata.sort(compareFunc)];
   return `<div class="${"listcontainer svelte-ddf3fd"}" style="${"grid-gap: " + escape(gap)}">${headerdata ? `${validate_component(Row, "Row").$$render($$result, {rowvalue: headerdata, rowType: "Header"}, {}, {})}` : ``}
     ${rowdata.length ? each(rowdata, (rowvalue, rowno) => `${validate_component(Row, "Row").$$render($$result, {rowvalue, rowno}, {}, {})}`) : `No Data Provided`}
 </div>`;
+});
+var index_svelte_svelte_type_style_lang$4 = ".resultscontainer.svelte-arr4kj{display:grid;align-content:space-between}.header.svelte-arr4kj{display:grid;grid-template-columns:1fr 1fr;justify-items:left;align-items:center;align-content:space-around}button.svelte-arr4kj{margin-bottom:10px;cursor:pointer}";
+const css$b = {
+  code: ".resultscontainer.svelte-arr4kj{display:grid;align-content:space-between}.header.svelte-arr4kj{display:grid;grid-template-columns:1fr 1fr;justify-items:left;align-items:center;align-content:space-around}button.svelte-arr4kj{margin-bottom:10px;cursor:pointer}",
+  map: '{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script>\\n  // import numeral from \\"numeral\\";\\n  import http from \\"$lib/httpStore.js\\";\\n  import { onMount } from \\"svelte\\";\\n  import List from \\"$lib/listview/list.svelte\\";\\n  $: showDetail = false;\\n  $: rowdata = [];\\n  $: detailrowdata = [];\\n  $: summaryheaderrowdata = [];\\n  $: detailheaderrowdata = [];\\n  $: pickedRow = [];\\n  let covidSummary;\\n  const covidDetail = http([]);\\n  onMount(() => {\\n    console.log(\\"here\\");\\n    covidSummary = http({});\\n    covidSummary.get(\\"https://api.covid19api.com/summary\\");\\n  });\\n  function handleMessage(event) {\\n    let pickedCountryCode = event.detail.rowvalue[0];\\n    if (event.detail.rowno > 0) {\\n      pickedRow = $covidSummary.Countries.filter(\\n        (c) => c.Country === pickedCountryCode\\n      );\\n      if (pickedRow.length == 1) {\\n        console.log(pickedRow[0].Slug);\\n        covidDetail.get(\\n          `https://api.covid19api.com/total/country/${pickedRow[0].Slug}`\\n        );\\n      }\\n    }\\n  }\\n  /* Toggles between summary screen and detail screen */\\n  function toggleShowDetail() {\\n    if (showDetail) {\\n      detailrowdata = [];\\n    }\\n    showDetail = !showDetail;\\n  }\\n  //   /* Populate the Detail data */\\n  $: covidDetail.subscribe((value) => {\\n    if (value.length && value.length > 0) {\\n      showDetail = true;\\n      detailrowdata = [];\\n\\n      let lastDeaths = 0;\\n      let lastConfirmed = 0;\\n      /* Detail Rows */\\n      value.forEach((element) => {\\n        detailrowdata.push([\\n          element.Confirmed,\\n          element.Confirmed - lastConfirmed,\\n          element.Deaths,\\n          element.Deaths - lastDeaths,\\n          element.Recovered,\\n          element.Active,\\n          new Date(element.Date).toISOString().slice(0, 10),\\n        ]);\\n        lastDeaths = element.Deaths;\\n        lastConfirmed = element.Confirmed;\\n      });\\n      /* sort by descending date */\\n      detailrowdata.sort((a, b) => (a[6] < a[6] ? 1 : -1));\\n      /* Heading Row */\\n      detailheaderrowdata = [\\n        \\"Confirmed\\",\\n        \\"New Confirmed\\",\\n        \\"Deaths\\",\\n        \\"New Deaths\\",\\n        \\"Recovered\\",\\n        \\"Active\\",\\n        \\"Date\\",\\n      ];\\n    }\\n  });\\n  /* populate the summary data */\\n  $: covidSummary ? covidSummary.subscribe((value) => {\\n    if (value.Global) {\\n      rowdata = [];\\n      /* Heading Row */\\n      summaryheaderrowdata = [\\n        \\"Country\\",\\n        \\"New Confirmed\\",\\n        \\"Total Confirmed\\",\\n        \\"New Deaths\\",\\n        \\"Total Deaths\\",\\n        \\"New Recovered\\",\\n        \\"Total Recovered\\",\\n      ];\\n      /* World Data */\\n      rowdata.push([\\n        \\"World\\",\\n        value.Global.NewConfirmed,\\n        value.Global.TotalConfirmed,\\n        value.Global.NewDeaths,\\n        value.Global.TotalDeaths,\\n        value.Global.NewRecovered,\\n        value.Global.TotalRecovered,\\n      ]);\\n      /* Country Data */\\n      value.Countries.forEach((element) => {\\n        rowdata.push([\\n          element.Country,\\n          element.NewConfirmed,\\n          element.TotalConfirmed,\\n          element.NewDeaths,\\n          element.TotalDeaths,\\n          element.NewRecovered,\\n          element.TotalRecovered,\\n        ]);\\n      });\\n    }\\n  }) : {};\\n</script>\\n\\n<div class=\\"resultscontainer\\">\\n  {#if $covidSummary && $covidSummary.Countries && $covidSummary.Global}\\n    {#if !showDetail}\\n      <div class=\\"rowdata\\">\\n        <h1>Country Data - click on any row for detailed data</h1>\\n        <List\\n          {rowdata}\\n          headerdata={summaryheaderrowdata}\\n          on:rowSelected={handleMessage}\\n          sortCol=\\"0\\"\\n        />\\n      </div>\\n    {:else}\\n      <div class=\\"spacer\\" />\\n\\n      {#if detailrowdata && detailrowdata.length > 0}\\n        <div class=\\"detailrowdata\\">\\n          <div class=\\"header\\">\\n            <h1>\\n              Detail Data about {pickedRow[0].Country}\\n            </h1>\\n\\n            <button on:click={toggleShowDetail}\\n              >Return to Country Summary</button\\n            >\\n          </div>\\n          <List\\n            rowdata={detailrowdata}\\n            headerdata={detailheaderrowdata}\\n            sortCol=\\"6\\"\\n          />\\n        </div>\\n      {/if}\\n    {/if}\\n  {:else}\\n    <p>loading . . .</p>\\n  {/if}\\n</div>\\n\\n<style>\\n  .resultscontainer {\\n    display: grid;\\n    align-content: space-between;\\n  }\\n  .header {\\n    display: grid;\\n    grid-template-columns: 1fr 1fr;\\n    justify-items: left;\\n    align-items: center;\\n    align-content: space-around;\\n  }\\n  button {\\n    margin-bottom: 10px;\\n    cursor: pointer;\\n  }\\n</style>\\n"],"names":[],"mappings":"AA2JE,iBAAiB,cAAC,CAAC,AACjB,OAAO,CAAE,IAAI,CACb,aAAa,CAAE,aAAa,AAC9B,CAAC,AACD,OAAO,cAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,GAAG,CAAC,GAAG,CAC9B,aAAa,CAAE,IAAI,CACnB,WAAW,CAAE,MAAM,CACnB,aAAa,CAAE,YAAY,AAC7B,CAAC,AACD,MAAM,cAAC,CAAC,AACN,aAAa,CAAE,IAAI,CACnB,MAAM,CAAE,OAAO,AACjB,CAAC"}'
+};
+const Covidstats = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let showDetail;
+  let rowdata;
+  let detailrowdata;
+  let summaryheaderrowdata;
+  let detailheaderrowdata;
+  let pickedRow;
+  let $covidSummary, $$unsubscribe_covidSummary = noop, $$subscribe_covidSummary = () => ($$unsubscribe_covidSummary(), $$unsubscribe_covidSummary = subscribe(covidSummary, ($$value) => $covidSummary = $$value), covidSummary);
+  let covidSummary;
+  const covidDetail = http([]);
+  onMount(() => {
+    console.log("here");
+    $$subscribe_covidSummary(covidSummary = http({}));
+    covidSummary.get("https://api.covid19api.com/summary");
+  });
+  $$result.css.add(css$b);
+  showDetail = false;
+  rowdata = [];
+  detailrowdata = [];
+  summaryheaderrowdata = [];
+  detailheaderrowdata = [];
+  pickedRow = [];
+  {
+    covidDetail.subscribe((value) => {
+      if (value.length && value.length > 0) {
+        showDetail = true;
+        detailrowdata = [];
+        let lastDeaths = 0;
+        let lastConfirmed = 0;
+        value.forEach((element) => {
+          detailrowdata.push([
+            element.Confirmed,
+            element.Confirmed - lastConfirmed,
+            element.Deaths,
+            element.Deaths - lastDeaths,
+            element.Recovered,
+            element.Active,
+            new Date(element.Date).toISOString().slice(0, 10)
+          ]);
+          lastDeaths = element.Deaths;
+          lastConfirmed = element.Confirmed;
+        });
+        detailrowdata.sort((a, b) => a[6] < a[6] ? 1 : -1);
+        detailheaderrowdata = [
+          "Confirmed",
+          "New Confirmed",
+          "Deaths",
+          "New Deaths",
+          "Recovered",
+          "Active",
+          "Date"
+        ];
+      }
+    });
+  }
+  {
+    covidSummary ? covidSummary.subscribe((value) => {
+      if (value.Global) {
+        rowdata = [];
+        summaryheaderrowdata = [
+          "Country",
+          "New Confirmed",
+          "Total Confirmed",
+          "New Deaths",
+          "Total Deaths",
+          "New Recovered",
+          "Total Recovered"
+        ];
+        rowdata.push([
+          "World",
+          value.Global.NewConfirmed,
+          value.Global.TotalConfirmed,
+          value.Global.NewDeaths,
+          value.Global.TotalDeaths,
+          value.Global.NewRecovered,
+          value.Global.TotalRecovered
+        ]);
+        value.Countries.forEach((element) => {
+          rowdata.push([
+            element.Country,
+            element.NewConfirmed,
+            element.TotalConfirmed,
+            element.NewDeaths,
+            element.TotalDeaths,
+            element.NewRecovered,
+            element.TotalRecovered
+          ]);
+        });
+      }
+    }) : {};
+  }
+  $$unsubscribe_covidSummary();
+  return `<div class="${"resultscontainer svelte-arr4kj"}">${$covidSummary && $covidSummary.Countries && $covidSummary.Global ? `${!showDetail ? `<div class="${"rowdata"}"><h1>Country Data - click on any row for detailed data</h1>
+        ${validate_component(List, "List").$$render($$result, {
+    rowdata,
+    headerdata: summaryheaderrowdata,
+    sortCol: "0"
+  }, {}, {})}</div>` : `<div class="${"spacer"}"></div>
+
+      ${detailrowdata && detailrowdata.length > 0 ? `<div class="${"detailrowdata"}"><div class="${"header svelte-arr4kj"}"><h1>Detail Data about ${escape(pickedRow[0].Country)}</h1>
+
+            <button class="${"svelte-arr4kj"}">Return to Country Summary</button></div>
+          ${validate_component(List, "List").$$render($$result, {
+    rowdata: detailrowdata,
+    headerdata: detailheaderrowdata,
+    sortCol: "6"
+  }, {}, {})}</div>` : ``}`}` : `<p>loading . . .</p>`}
+</div>`;
+});
+var index$6 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Covidstats
+});
+var fibonacci_svelte_svelte_type_style_lang = ".fibcontainer.svelte-1jsrbd7{display:grid;grid-template-columns:1fr;gap:20px;margin-left:10%;margin-right:10%}textarea.svelte-1jsrbd7{height:500px;border-bottom:100px;padding-bottom:100px}";
+const css$a = {
+  code: ".fibcontainer.svelte-1jsrbd7{display:grid;grid-template-columns:1fr;gap:20px;margin-left:10%;margin-right:10%}textarea.svelte-1jsrbd7{height:500px;border-bottom:100px;padding-bottom:100px}",
+  map: '{"version":3,"file":"fibonacci.svelte","sources":["fibonacci.svelte"],"sourcesContent":["<script>\\n    import { onMount } from \\"svelte\\";\\n    let fibstring1 = \\"\\";\\n    let modstr1 = \\"\\";\\n    let modstr2 = \\"\\";\\n    let fibnumber = 50;\\n    $: {\\n        if (fibnumber > 2) {\\n            fibstring1 = \\"fib(\\"+fibnumber.toString() + \\") = \\" + fibfn2(fibnumber).toString();\\n            // modstr1 = fibmod(fibnumber,9);\\n            // modstr2 = fibmod(fibnumber, 11);\\n        }\\n    }\\n    const fibfnrecursive = (n) => {\\n        if (n < 2) return 1;\\n        return BigInt(fibfnrecursive(n - 1)) + BigInt(fibfnrecursive(n - 2));\\n    };\\n    const fibfn = (n) => {\\n        let fib = [BigInt(0)];\\n        let f = 0;\\n        for (let k = 1; k <= n; k++) {\\n            if (k <= 2) {\\n                f = 1;\\n            } else {\\n                f = BigInt(fib[k - 1]) + BigInt(fib[k - 2]);\\n                if (k >= 4) fib[k - 3] = 0;\\n            }\\n            fib.push(f);\\n        }\\n        return fib[n];\\n    };\\n    const fibfn2 = (n) => {\\n        if (n < 2) return 1;\\n        let n_1 = BigInt(1),\\n            n_2 = BigInt(1);\\n        for (let i = 2; i <= n; i += 1) {\\n            let n_new = BigInt(n_1) + BigInt(n_2);\\n            n_1 = n_2;\\n            n_2 = n_new;\\n        }\\n        return n_2;\\n    };\\n    const fibmod = (n, m) => {\\n        let modstr = \\"\\";\\n        for (let i = 2; i <= n; i++) {\\n            modstr += (fibfn2(i) % BigInt(m)).toString() + \\" \\";\\n        }\\n        return \\"fib(\\" + n.toString() + \\") mod \\" + m.toString() + \\" = \\" + modstr;\\n    }\\n    onMount(() => {\\n        fibstring1 = \\"fib(\\"+fibnumber.toString() + \\") = \\" + fibfn2(fibnumber).toString();\\n        modstr1 = fibmod(fibnumber, 3);\\n        modstr2 = fibmod(fibnumber, 5);\\n        // console.log(fibstring1.length);\\n    });\\n</script>\\n\\n<style>\\n    .fibcontainer {\\n        display: grid;\\n        grid-template-columns: 1fr;\\n        gap: 20px;\\n        margin-left: 10%;\\n        margin-right: 10%;\\n        /* gap: 100px;\\n        border-bottom: 10px; */\\n    }\\n    textarea {\\n        height: 500px;\\n        border-bottom: 100px;\\n        padding-bottom: 100px;\\n    }\\n</style>\\n\\n<div class=\\"fibcontainer\\">\\n    <p>Fibonacci number: {fibnumber}</p>\\n    <input type=\\"number\\" bind:value={fibnumber} />\\n    <textarea name=\\"\\" id=\\"\\" cols=\\"200\\" rows=\\"200\\">{fibstring1}</textarea>\\n    <!-- <textarea>{modstr1}</textarea>\\n    <textarea>{modstr2}</textarea> -->\\n</div>\\n"],"names":[],"mappings":"AA0DI,aAAa,eAAC,CAAC,AACX,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,GAAG,CAC1B,GAAG,CAAE,IAAI,CACT,WAAW,CAAE,GAAG,CAChB,YAAY,CAAE,GAAG,AAGrB,CAAC,AACD,QAAQ,eAAC,CAAC,AACN,MAAM,CAAE,KAAK,CACb,aAAa,CAAE,KAAK,CACpB,cAAc,CAAE,KAAK,AACzB,CAAC"}'
+};
+const Fibonacci = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let fibstring1 = "";
+  let fibnumber = 50;
+  const fibfn2 = (n) => {
+    if (n < 2)
+      return 1;
+    let n_1 = BigInt(1), n_2 = BigInt(1);
+    for (let i = 2; i <= n; i += 1) {
+      let n_new = BigInt(n_1) + BigInt(n_2);
+      n_1 = n_2;
+      n_2 = n_new;
+    }
+    return n_2;
+  };
+  const fibmod = (n, m) => {
+    let modstr = "";
+    for (let i = 2; i <= n; i++) {
+      modstr += (fibfn2(i) % BigInt(m)).toString() + " ";
+    }
+    return "fib(" + n.toString() + ") mod " + m.toString() + " = " + modstr;
+  };
+  onMount(() => {
+    fibstring1 = "fib(" + fibnumber.toString() + ") = " + fibfn2(fibnumber).toString();
+    fibmod(fibnumber, 3);
+    fibmod(fibnumber, 5);
+  });
+  $$result.css.add(css$a);
+  {
+    {
+      {
+        fibstring1 = "fib(" + fibnumber.toString() + ") = " + fibfn2(fibnumber).toString();
+      }
+    }
+  }
+  return `<div class="${"fibcontainer svelte-1jsrbd7"}"><p>Fibonacci number: ${escape(fibnumber)}</p>
+    <input type="${"number"}"${add_attribute("value", fibnumber, 1)}>
+    <textarea name="${""}" id="${""}" cols="${"200"}" rows="${"200"}" class="${"svelte-1jsrbd7"}">${escape(fibstring1)}</textarea>
+    </div>`;
+});
+var fibonacci = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Fibonacci
 });
 const count = writable(0);
 writable({
