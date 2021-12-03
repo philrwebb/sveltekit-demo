@@ -30,6 +30,7 @@
 		"@types/d3-scale-chromatic": "^2.0.0",
 		"d3-geo": "^2.0.1",
 		"d3-scale-chromatic": "^2.0.0",
+		"netlify-cli": "^8.0.14",
 		"numeral": "^2.0.6",
 		"svelte-canvas": "^0.6.1",
 		"topojson-client": "^3.1.0"
