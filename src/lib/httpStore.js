@@ -5,7 +5,6 @@ import { writable } from 'svelte/store'
 export default function (initial) {
   // create the underlying store
   const store = writable(initial)
-  console.log(initial);
 
   // define a request function that will do `fetch` and update store when request finishes
   store.request = async (method, url, params = null) => {
@@ -49,6 +48,5 @@ export default function (initial) {
   store.delete = (url, params) => store.request('DELETE', url, params)
 
   // return the customized store
-  console.log(store);
   return store
 }

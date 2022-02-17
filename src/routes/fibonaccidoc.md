@@ -120,6 +120,8 @@ Given you know a Fibonacci number you can calculate its successor by multiplying
 
 <pre>&nbsp;&nbsp;&nbsp;&nbsp;f(n) = &phi;*n/5<sup>&radic;0.5</sup></pre>
 
+<pre>e<sup>&pi;i</sup> = -1</pre>
+
 This method actually provides an estimate which always rounds to the correct Fibonacci number. Unfortunately, it cannot replace the accuracy (significant digits) of the javascript or python iterative functions because it involves floating point arithmetic and its limitations with regards to significant digits.
 
 ### Series based on fib(n) % m

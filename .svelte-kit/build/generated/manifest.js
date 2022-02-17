@@ -11,6 +11,8 @@ const c = [
 	() => import("../../../src/routes/fibonacci.svelte"),
 	() => import("../../../src/routes/listview/index.svelte"),
 	() => import("../../../src/routes/settings.svelte"),
+	() => import("../../../src/routes/starwars/index.svelte"),
+	() => import("../../../src/routes/starwars/starwarspanel.svelte"),
 	() => import("../../../src/routes/treedemo/index.svelte"),
 	() => import("../../../src/routes/apidemo/index.svelte"),
 	() => import("../../../src/routes/apidemo/[lastName].svelte"),
@@ -54,29 +56,38 @@ export const routes = [
 	// src/routes/settings.svelte
 	[/^\/settings\/?$/, [c[0], c[11]], [c[1]]],
 
+	// src/routes/starwars/index.svelte
+	[/^\/starwars\/?$/, [c[0], c[12]], [c[1]]],
+
+	// src/routes/starwars/starwarspanel.svelte
+	[/^\/starwars\/starwarspanel\/?$/, [c[0], c[13]], [c[1]]],
+
+	// src/routes/starwars/store.js
+	[/^\/starwars\/store\/?$/],
+
 	// src/routes/treedemo/index.svelte
-	[/^\/treedemo\/?$/, [c[0], c[12]], [c[1]]],
+	[/^\/treedemo\/?$/, [c[0], c[14]], [c[1]]],
 
 	// src/routes/apidemo/index.svelte
-	[/^\/apidemo\/?$/, [c[0], c[13]], [c[1]]],
+	[/^\/apidemo\/?$/, [c[0], c[15]], [c[1]]],
 
 	// src/routes/apidemo/[lastName].svelte
-	[/^\/apidemo\/([^/]+?)\/?$/, [c[0], c[14]], [c[1]], (m) => ({ lastName: d(m[1])})],
+	[/^\/apidemo\/([^/]+?)\/?$/, [c[0], c[16]], [c[1]], (m) => ({ lastName: d(m[1])})],
 
 	// src/routes/counter/index.svelte
-	[/^\/counter\/?$/, [c[0], c[15]], [c[1]]],
+	[/^\/counter\/?$/, [c[0], c[17]], [c[1]]],
 
 	// src/routes/dynamic/index.svelte
-	[/^\/dynamic\/?$/, [c[0], c[16]], [c[1]]],
+	[/^\/dynamic\/?$/, [c[0], c[18]], [c[1]]],
 
 	// src/routes/pattern.svelte
-	[/^\/pattern\/?$/, [c[0], c[17]], [c[1]]],
+	[/^\/pattern\/?$/, [c[0], c[19]], [c[1]]],
 
 	// src/routes/tabdemo/index.svelte
-	[/^\/tabdemo\/?$/, [c[0], c[18]], [c[1]]],
+	[/^\/tabdemo\/?$/, [c[0], c[20]], [c[1]]],
 
 	// src/routes/about.svelte
-	[/^\/about\/?$/, [c[0], c[19]], [c[1]]],
+	[/^\/about\/?$/, [c[0], c[21]], [c[1]]],
 
 	// src/routes/api/index.js
 	[/^\/api\/?$/],

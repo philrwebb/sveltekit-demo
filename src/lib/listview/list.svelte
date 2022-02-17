@@ -30,7 +30,7 @@
     $: compareFunc = sortAsc ? compareAsc : compareDesc;
     $: rowdata = [...rowdata.sort(compareFunc)];
     function sortColumn(event) {
-        console.log(sortCol);
+
         let clickedColumn = event.detail.cellno;
         if (clickedColumn !== sortCol) {
             sortAsc = !sortAsc;
@@ -38,7 +38,6 @@
             sortAsc = !sortAsc;
         }
         sortCol = clickedColumn;
-        console.log(sortCol);
     }
 </script>
 

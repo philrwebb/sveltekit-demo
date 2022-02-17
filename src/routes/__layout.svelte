@@ -3,7 +3,7 @@
 </svelte:head>
 <nav>
     <a href="/">Home</a>
-    <!-- <a sveltekit:prefetch href="example-markdown">Documentation</a> -->
+    <a sveltekit:prefetch href="starwars">Starwars</a>
     <a sveltekit:prefetch href="pattern">Pattern</a>
     <a sveltekit:prefetch href="particlerain">Particle Rain</a>
     <!-- <a sveltekit:prefetch href="canvasexample">Canvas Globe</a> -->

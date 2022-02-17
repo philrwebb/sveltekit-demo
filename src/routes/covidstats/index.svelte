@@ -3,8 +3,8 @@
   import http from "$lib/httpStore.js";
   import { onMount } from "svelte";
   import List from "$lib/listview/list.svelte";
-  $: showDetail = false;
-  $: rowdata = [];
+  let showDetail = false;
+  let rowdata = [];
   $: detailrowdata = [];
   $: summaryheaderrowdata = [];
   $: detailheaderrowdata = [];
@@ -12,18 +12,16 @@
   let covidSummary;
   const covidDetail = http([]);
   onMount(() => {
-    console.log("here");
     covidSummary = http({});
     covidSummary.get("https://api.covid19api.com/summary");
   });
   function handleMessage(event) {
     let pickedCountryCode = event.detail.rowvalue[0];
-    if (event.detail.rowno > 0) {
+    if (event.detail.rowType !== "Header") {
       pickedRow = $covidSummary.Countries.filter(
         (c) => c.Country === pickedCountryCode
       );
       if (pickedRow.length == 1) {
-        console.log(pickedRow[0].Slug);
         covidDetail.get(
           `https://api.covid19api.com/total/country/${pickedRow[0].Slug}`
         );
@@ -38,7 +36,7 @@
     showDetail = !showDetail;
   }
   //   /* Populate the Detail data */
-  $: covidDetail.subscribe((value) => {
+  covidDetail.subscribe((value) => {
     if (value.length && value.length > 0) {
       showDetail = true;
       detailrowdata = [];

@@ -11,7 +11,7 @@
     export let cellno = 0;
     export let rowno = 0;
     function sendMessage() {
-        if (rowno === 0) {
+        if (rowno === 0 && rowType === "Header") {
             dispatch("columnSelected", {
                 cellno: cellno,
             });

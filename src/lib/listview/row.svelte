@@ -5,15 +5,13 @@
         dispatch("rowSelected", {
             rowvalue: rowvalue,
             rowno,
+            rowType,
         });
     }
     import Cell from "./cell.svelte";
     export let rowType = "row";
     export let rowvalue;
     export let rowno = 0;
-    onMount(() => {
-        console.log(Array.isArray(rowvalue));
-    });
     let nocols = rowvalue.length;
     const gap = "1px";
 </script>
