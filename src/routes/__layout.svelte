@@ -15,6 +15,8 @@
     <!-- <a sveltekit:prefetch href="listview">List Component</a> -->
     <a sveltekit:prefetch href="covidstats">Covid 19 Statistics</a>
     <a sveltekit:prefetch href="tabdemo">Tabs Demo</a>
+    <a sveltekit:prefetch href="starwars">Starwars API on Tabs</a>
+
 </nav>
 
 <div class="content">
