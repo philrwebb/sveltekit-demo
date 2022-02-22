@@ -20,6 +20,7 @@ const c = [
 	() => import("../../../src/routes/dynamic/index.svelte"),
 	() => import("../../../src/routes/pattern.svelte"),
 	() => import("../../../src/routes/tabdemo/index.svelte"),
+	() => import("../../../src/routes/wordle/index.svelte"),
 	() => import("../../../src/routes/about.svelte")
 ];
 
@@ -86,8 +87,11 @@ export const routes = [
 	// src/routes/tabdemo/index.svelte
 	[/^\/tabdemo\/?$/, [c[0], c[20]], [c[1]]],
 
+	// src/routes/wordle/index.svelte
+	[/^\/wordle\/?$/, [c[0], c[21]], [c[1]]],
+
 	// src/routes/about.svelte
-	[/^\/about\/?$/, [c[0], c[21]], [c[1]]],
+	[/^\/about\/?$/, [c[0], c[22]], [c[1]]],
 
 	// src/routes/api/index.js
 	[/^\/api\/?$/],

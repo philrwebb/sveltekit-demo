@@ -27,6 +27,7 @@
 		"node": ">= 12.17.0"
 	},
 	"dependencies": {
+		"@supabase/supabase-js": "^1.30.5",
 		"@types/d3-scale-chromatic": "^2.0.0",
 		"automap-js": "^1.0.2",
 		"d3-geo": "^2.0.1",
