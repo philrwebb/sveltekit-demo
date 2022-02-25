@@ -8,7 +8,7 @@
 <div
   class="key"
   on:click={() => dispatch("keypressed", { keyLetter })}
-  style:background-color="{letter.color}"
+  style="background-color:{letter.color};"
 >
   {keyLetter}
 </div>

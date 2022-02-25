@@ -16,12 +16,14 @@
     let words = await getWords();
     $gameData.wordsToGuess = words;
     $gameData.wordToGuess = words[Math.floor(Math.random() * words.length)];
+    console.log($gameData.wordToGuess);
   });
   const handleKeydown = (event) => {
     if (event.key === "F12") {
       return;
     }
     event.preventDefault();
+   
     if ($gameData.currentRow > 5) return;
     if (event.key === "Backspace" && $gameData.currentCol > 0) {
       $gameData.currentCol--;
@@ -37,6 +39,7 @@
         $gameData.rowstate[$gameData.currentRow - 1],
         $gameData.wordToGuess
       );
+      console.log($gameData.rowstate[$gameData.currentRow - 1])
       $keyboardData.keystate = setKeyBoard(
         $keyboardData.keystate,
         $gameData.rowstate[$gameData.currentRow - 1]

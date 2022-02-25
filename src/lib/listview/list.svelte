@@ -48,7 +48,7 @@
     {#each rowdata as rowvalue, rowno}
         <Row {rowvalue} on:rowSelected {rowno} on:columnSelected={sortColumn} />
     {:else}
-        No Data Provided
+        Loading . . .
     {/each}
 </div>
 

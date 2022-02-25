@@ -1,6 +1,7 @@
 <script>
 	import Box from "./box.svelte";
 	export let rowstate = [];
+	// console.log(rowstate)
 </script>
 
 <div class="row">
