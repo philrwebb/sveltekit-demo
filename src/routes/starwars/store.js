@@ -1,19 +1,5 @@
 import { writable } from 'svelte/store'
-// import { AutoMap } from 'automap-js'
-// let MapKeys = {
-//   key2: 'a=>b'
-// }
-// AutoMap.CreateMap(MapKeys.key2)
-//   .forMember('name')
-//   .mapFrom('name')
-//   .forMember('height')
-//   .mapFrom('height')
-//   .forMember('mass')
-//   .mapFrom('mass')
-//   .forMember('skin_color')
-//   .mapFrom('skin_color')
-//   .forMember('hair_color')
-//   .mapFrom('hair_color')
+
 export const people = writable({
   header: [],
   rows: [],
@@ -65,10 +51,8 @@ function removeLastComma(strng) {
 }
 export const peopleLoad = (data) => {
   let test = {}
-  
+
   people.update(() => {
-    // AutoMap.Map(MapKeys.key2, data.results[0], test)
-    // console.log(test)
     let rows = data.results.map((person) => {
       let ary = []
       ary.push(person.name)
