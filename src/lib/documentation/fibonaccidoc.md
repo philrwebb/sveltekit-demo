@@ -93,7 +93,11 @@ You will need a version of python installed to run this but the fact that out of
 
 ### Fibonacci numbers and the Golden Ratio (phi)
 
-The Golden Ratio or phi is approximated as 1.618033988749895. The value of:
+```
+a^2 + b^2 = c^2
+```
+
+The Golden Ratio or phi (&Phi;) is approximated as 1.618033988749895. The value of:
 ```
     fib(n+1)/fib(n)
 ```
