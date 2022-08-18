@@ -1,27 +1,28 @@
 const c = [
-	() => import("../../../src/routes/__layout.svelte"),
-	() => import("../components/error.svelte"),
-	() => import("../../../src/routes/index.svelte"),
-	() => import("../../../src/routes/example-markdown.md"),
-	() => import("../../../src/routes/fibonaccidoc.md"),
-	() => import("../../../src/routes/particlerain.svelte"),
-	() => import("../../../src/routes/audioplayer/index.svelte"),
-	() => import("../../../src/routes/listviewdoc.md"),
-	() => import("../../../src/routes/covidstats/index.svelte"),
-	() => import("../../../src/routes/fibonacci.svelte"),
-	() => import("../../../src/routes/listview/index.svelte"),
-	() => import("../../../src/routes/settings.svelte"),
-	() => import("../../../src/routes/starwars/index.svelte"),
-	() => import("../../../src/routes/starwars/starwarspanel.svelte"),
-	() => import("../../../src/routes/treedemo/index.svelte"),
-	() => import("../../../src/routes/apidemo/index.svelte"),
-	() => import("../../../src/routes/apidemo/[lastName].svelte"),
-	() => import("../../../src/routes/counter/index.svelte"),
-	() => import("../../../src/routes/dynamic/index.svelte"),
-	() => import("../../../src/routes/pattern.svelte"),
-	() => import("../../../src/routes/tabdemo/index.svelte"),
-	() => import("../../../src/routes/wordle/index.svelte"),
-	() => import("../../../src/routes/about.svelte")
+	() => import("..\\..\\..\\src\\routes\\__layout.svelte"),
+	() => import("..\\components\\error.svelte"),
+	() => import("..\\..\\..\\src\\routes\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\example-markdown.md"),
+	() => import("..\\..\\..\\src\\routes\\fibonaccidoc.md"),
+	() => import("..\\..\\..\\src\\routes\\particlerain.svelte"),
+	() => import("..\\..\\..\\src\\routes\\audioplayer\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\listviewdoc.md"),
+	() => import("..\\..\\..\\src\\routes\\covidstats\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\fibonacci.svelte"),
+	() => import("..\\..\\..\\src\\routes\\listview\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\settings.svelte"),
+	() => import("..\\..\\..\\src\\routes\\starwars\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\starwars\\starwarspanel.svelte"),
+	() => import("..\\..\\..\\src\\routes\\treedemo\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\apidemo\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\apidemo\\[lastName].svelte"),
+	() => import("..\\..\\..\\src\\routes\\counter\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\dynamic\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\pattern.svelte"),
+	() => import("..\\..\\..\\src\\routes\\tabdemo\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\wordle\\index.svelte"),
+	() => import("..\\..\\..\\src\\routes\\about.svelte"),
+	() => import("..\\..\\..\\src\\routes\\test.svelte")
 ];
 
 const d = decodeURIComponent;
@@ -92,6 +93,9 @@ export const routes = [
 
 	// src/routes/about.svelte
 	[/^\/about\/?$/, [c[0], c[22]], [c[1]]],
+
+	// src/routes/test.svelte
+	[/^\/test\/?$/, [c[0], c[23]], [c[1]]],
 
 	// src/routes/api/index.js
 	[/^\/api\/?$/],

@@ -53,20 +53,17 @@
 
 <style scoped>
     .container {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
     }
-    .content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin: 10px;
-        border: 2px solid grey;
-        justify-content: space-evenly;
-        align-content: center;
-        background-color: lightgrey;
+    .content 
+    {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 10px;
     }
-    .content > p {
-        margin: 10px;
-        /* border: 2px solid lightblue; */
-    }
+
 </style>
